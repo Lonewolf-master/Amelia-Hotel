@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SectionContainer } from '../../components/common/SectionContainer';
 import { useLanguage } from '../../context/LanguageContext';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { TrustScore } from '../../components/common/TrustScore';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -159,6 +160,10 @@ export const TestimonialsSlider: React.FC = () => {
         <div className="testimonial-header text-center mb-20">
           <h2 className="text-sm uppercase tracking-[0.4em] text-gold mb-4 font-sans font-medium">{t.subheading}</h2>
           <h3 className="text-5xl md:text-6xl luxury-heading text-white">{t.heading}</h3>
+        </div>
+
+        <div className="mb-24">
+          <TrustScore />
         </div>
 
         <div className="relative min-h-[400px] md:min-h-[450px] flex items-center justify-center">
