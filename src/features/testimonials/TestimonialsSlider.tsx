@@ -133,31 +133,31 @@ export const TestimonialsSlider: React.FC = () => {
           <h3 className="text-5xl md:text-6xl luxury-heading text-white">Guest Experiences</h3>
         </div>
 
-        <div className="relative min-h-[450px] flex items-center justify-center">
+        <div className="relative min-h-[400px] md:min-h-[450px] flex items-center justify-center">
           <div 
             ref={cardRef}
-            className="w-full bg-slate-950 p-12 md:p-20 border border-slate-800 luxury-shadow relative"
+            className="w-full bg-slate-950 p-8 md:p-20 border border-slate-800 luxury-shadow relative"
           >
-            <Quote className="absolute top-10 left-10 w-16 h-16 text-gold/5 -z-0" />
+            <Quote className="absolute top-6 left-6 md:top-10 md:left-10 w-10 h-10 md:w-16 md:h-16 text-gold/5 -z-0" />
             
             <div className="relative z-10">
-              <div className="flex items-center space-x-1 text-gold mb-8">
+              <div className="flex items-center space-x-1 text-gold mb-6 md:mb-8">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-gold" />
+                  <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-gold" />
                 ))}
-                <span className="ml-4 text-white font-bold tracking-widest">{testimonial.score}</span>
+                <span className="ml-3 md:ml-4 text-white font-bold tracking-widest text-xs md:text-sm">{testimonial.score}</span>
               </div>
 
-              <p className="text-2xl md:text-3xl text-slate-200 font-light italic leading-relaxed mb-12">
+              <p className="text-xl md:text-3xl text-slate-200 font-light italic leading-relaxed mb-10 md:mb-12">
                 "{testimonial.content}"
               </p>
 
-              <div className="flex flex-col md:flex-row md:items-center justify-between border-t border-slate-800 pt-8 gap-6">
+              <div className="flex flex-col md:flex-row md:items-center justify-between border-t border-slate-800 pt-6 md:pt-8 gap-4 md:gap-6">
                 <div>
-                  <h4 className="text-xl text-gold font-luxury tracking-wide">{testimonial.name}</h4>
-                  <p className="text-slate-500 uppercase tracking-widest text-xs mt-1">{testimonial.location}</p>
+                  <h4 className="text-lg md:text-xl text-gold font-luxury tracking-wide">{testimonial.name}</h4>
+                  <p className="text-slate-500 uppercase tracking-widest text-[10px] md:text-xs mt-1">{testimonial.location}</p>
                 </div>
-                <div className="text-slate-600 text-xs uppercase tracking-widest">
+                <div className="text-slate-600 text-[10px] md:text-xs uppercase tracking-widest">
                   {new Date(testimonial.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                 </div>
               </div>
