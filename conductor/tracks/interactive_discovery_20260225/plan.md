@@ -2,12 +2,12 @@
 
 This plan outlines the steps to build the core 'Interactive Discovery' experience for Apart Hotel Amelia.
 
-## Phase 1: Project Scaffolding & Configuration
+## Phase 1: Project Scaffolding & Configuration [checkpoint: 21add2d]
 
 - [x] Task: Initialize React/Vite project with TypeScript c43d71a
 - [x] Task: Install and configure core dependencies (GSAP, Tailwind, Lucide, Vitest) a90e47b
 - [x] Task: Set up project structure and global styles (Luxury Theme) 3594ce0
-- [~] Task: Conductor - User Manual Verification 'Phase 1: Project Scaffolding & Configuration' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Project Scaffolding & Configuration' (Protocol in workflow.md) 21add2d
 
 ## Phase 2: Layout & Global Components
 
