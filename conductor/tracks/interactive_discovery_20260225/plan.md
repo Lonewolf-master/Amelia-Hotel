@@ -12,7 +12,7 @@ This plan outlines the steps to build the core 'Interactive Discovery' experienc
 ## Phase 2: Layout & Global Components
 
 - [x] Task: Write Tests: Navigation and Footer components 7661fc3
-- [ ] Task: Implement: Navigation and Footer components with luxury styling
+- [~] Task: Implement: Navigation and Footer components with luxury styling
 - [ ] Task: Write Tests: Shared UI components (Buttons, Containers)
 - [ ] Task: Implement: Shared UI components
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Layout & Global Components' (Protocol in workflow.md)

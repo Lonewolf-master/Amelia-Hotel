@@ -4,6 +4,6 @@ import App from '../App'
 describe('App Component', () => {
   it('renders the luxury title', () => {
     render(<App />)
-    expect(screen.getByText(/Apart Hotel Amelia/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/Apart Hotel Amelia/i)[0]).toBeInTheDocument()
   })
 })

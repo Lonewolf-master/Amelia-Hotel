@@ -4,7 +4,7 @@ import Footer from '../../components/layout/Footer'
 describe('Footer Component', () => {
   it('renders the hotel name and copyright', () => {
     render(<Footer />)
-    expect(screen.getByText(/Apart Hotel Amelia/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/Apart Hotel Amelia/i)[0]).toBeInTheDocument()
     expect(screen.getByText(/©/i)).toBeInTheDocument()
   })
 
