@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent } from '../test-utils'
 import { TestimonialsSlider } from '../../features/testimonials/TestimonialsSlider'
 
 describe('TestimonialsSlider Component', () => {

@@ -20,6 +20,14 @@ const FAQS: FAQ[] = [
   },
   {
     id: 2,
+    question: { en: "What type of room can I book at Amelia Aparthotel?", fr: "Quel type de chambre puis-je réserver à l'Amelia Aparthotel?" },
+    answer: {
+      en: "Room options at Amelia Aparthotel include: Double, Twin, Studio, Apartment, and Triple rooms. Each category is designed with luxury and comfort in mind.",
+      fr: "Les options de chambres à l'Amelia Aparthotel comprennent: des chambres doubles, lits jumeaux, studios, appartements et triples. Chaque catégorie est conçue dans un souci de luxe et de confort."
+    }
+  },
+  {
+    id: 3,
     question: { en: "What are the check-in and check-out times?", fr: "Quelles sont les heures d'arrivée et de départ?" },
     answer: {
       en: "Check-in at Amelia Aparthotel is from 13:00 to 14:00, and check-out is available 24 hours until 11:00. Special requests can be made during the booking process.",
@@ -27,15 +35,15 @@ const FAQS: FAQ[] = [
     }
   },
   {
-    id: 3,
+    id: 4,
     question: { en: "Is there a restaurant on site?", fr: "Y a-t-il un restaurant sur place?" },
     answer: {
-      en: "Yes, Amelia Aparthotel has one signature restaurant serving a variety of African and European dishes, along with continental, buffet, and à la carte breakfast options.",
-      fr: "Oui, l'Amelia Aparthotel dispose d'un restaurant signature servant une variété de plats africains et européens, ainsi que des options de petit-déjeuner continental, buffet et à la carte."
+      en: "Yes, Amelia Aparthotel has a signature restaurant serving African and American cuisines. Guests can enjoy continental, buffet, and à la carte breakfast options.",
+      fr: "Oui, l'Amelia Aparthotel dispose d'un restaurant signature servant une cuisine africaine et américaine. Les clients peuvent profiter d'options de petit-déjeuner continental, buffet et à la carte."
     }
   },
   {
-    id: 4,
+    id: 5,
     question: { en: "How far is the hotel from the centre of Buea?", fr: "À quelle distance se trouve l'hôtel du centre de Buea?" },
     answer: {
       en: "Amelia Aparthotel is located approximately 4 km from the centre of Buea, providing a perfect balance of central access and tranquil retreat.",
@@ -43,7 +51,7 @@ const FAQS: FAQ[] = [
     }
   },
   {
-    id: 5,
+    id: 6,
     question: { en: "Is there a hot tub for guests?", fr: "Y a-t-il un bain à remous pour les clients?" },
     answer: {
       en: "Yes, we provide a hot tub/jacuzzi as part of our wellness facilities, along with a sauna and fitness centre.",

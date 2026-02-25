@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '../test-utils'
 import { RoomGallery } from '../../features/rooms/RoomGallery'
 
 describe('RoomGallery Component', () => {
@@ -17,7 +17,7 @@ describe('RoomGallery Component', () => {
   it('renders authentic room categories and prices', () => {
     render(<RoomGallery />)
     expect(screen.getByText(/Deluxe King Room/i)).toBeInTheDocument()
-    expect(screen.getByText(/XAF 80,000/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/XAF 80,000/i).length).toBeGreaterThan(0)
     expect(screen.getByText(/Superior Apartment with Balcony/i)).toBeInTheDocument()
     expect(screen.getByText(/XAF 200,000/i)).toBeInTheDocument()
   })

@@ -20,75 +20,123 @@ interface Room {
 const ROOMS: Room[] = [
   {
     id: 1,
-    title: { en: "Deluxe King Room", fr: "Chambre Deluxe King" },
-    type: { en: "Extra-large double bed", fr: "Grand lit double XL" },
-    price: "XAF 80,000 / night",
-    description: { 
-      en: "Featuring free toiletries and bathrobes, this double room includes a private bathroom with a bath, a shower and a bidet. Spacious with a dining area and flat-screen TV.",
-      fr: "Dotée d'articles de toilette gratuits et de peignoirs, cette chambre double comprend une salle de bains privative avec baignoire, douche et bidet. Spacieuse avec un coin repas et une télévision à écran plat."
-    },
-    image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800",
-    amenities: ["AC", "Balcony", "Private Bath", "Flat-screen TV"]
-  },
-  {
-    id: 2,
     title: { en: "Deluxe Double Room", fr: "Chambre Double Deluxe" },
-    type: { en: "Large double bed", fr: "Grand lit double" },
+    type: { en: "1 Large double bed • 25m²", fr: "1 Grand lit double • 25m²" },
     price: "XAF 40,000 / night",
     description: {
-      en: "Providing free toiletries and bathrobes, this double room includes a private bathroom with a shower, a bidet and a hairdryer. Featuring a balcony and air conditioning.",
-      fr: "Dotée d'articles de toilette et de peignoirs gratuits, cette chambre double comprend une salle de bains privative avec douche, bidet et sèche-cheveux. Dispose d'un balcon et de la climatisation."
+      en: "Providing free toiletries and bathrobes, this double room includes a private bathroom with a shower, a bidet and a hairdryer. Featuring a balcony and air conditioning. Continental breakfast included.",
+      fr: "Dotée d'articles de toilette et de peignoirs gratuits, cette chambre double comprend une salle de bains privative avec douche, bidet et sèche-cheveux. Dispose d'un balcon et de la climatisation. Petit-déjeuner continental inclus."
     },
     image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=800",
     amenities: ["AC", "Balcony", "Free Toiletries", "Bidet"]
   },
   {
+    id: 2,
+    title: { en: "Deluxe Twin Room", fr: "Chambre Twin Deluxe" },
+    type: { en: "1 Large double bed • 31m²", fr: "1 Grand lit double • 31m²" },
+    price: "XAF 60,000 / night",
+    description: {
+      en: "The spacious twin room offers air conditioning, a tea and coffee maker, as well as a private bathroom featuring a shower and a bidet. Featuring a balcony. Continental breakfast included.",
+      fr: "La chambre lits jumeaux spacieuse dispose de la climatisation, d'un plateau/bouilloire ainsi que d'une salle de bains privative avec douche et bidet. Dotée d'un balcon. Petit-déjeuner continental inclus."
+    },
+    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=800",
+    amenities: ["AC", "Balcony", "Tea/Coffee Maker", "Bidet"]
+  },
+  {
     id: 3,
+    title: { en: "Deluxe King Room", fr: "Chambre King Deluxe" },
+    type: { en: "1 Extra-large double bed • 31m²", fr: "1 Grand lit double XL • 31m²" },
+    price: "XAF 80,000 / night",
+    description: { 
+      en: "Featuring free toiletries and bathrobes, this double room includes a private bathroom with a bath, a shower and a bidet. Spacious with a dining area and flat-screen TV. Continental breakfast included.",
+      fr: "Dotée d'articles de toilette gratuits et de peignoirs, cette chambre double comprend une salle de bains privative avec baignoire, douche et bidet. Spacieuse avec un coin repas et une télévision à écran plat. Petit-déjeuner continental inclus."
+    },
+    image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800",
+    amenities: ["AC", "Balcony", "Private Bath", "Flat-screen TV"]
+  },
+  {
+    id: 4,
+    title: { en: "Deluxe Studio", fr: "Studio Deluxe" },
+    type: { en: "1 Extra-large double bed • 51m²", fr: "1 Grand lit double XL • 51m²" },
+    price: "XAF 80,000 / night",
+    description: {
+      en: "Offering free toiletries and bathrobes, this studio includes a private bathroom with a bath, a shower and a bidet. Features a flat-screen TV and dining area. Continental breakfast included.",
+      fr: "Offrant des articles de toilette et des peignoirs gratuits, ce studio comprend une salle de bains privative avec baignoire, douche et bidet. Dispose d'une télévision à écran plat et d'un coin repas. Petit-déjeuner continental inclus."
+    },
+    image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=800",
+    amenities: ["Spa Bath", "AC", "Kitchenette", "Dining Area"]
+  },
+  {
+    id: 5,
     title: { en: "Luxury Triple Room", fr: "Chambre Triple de Luxe" },
-    type: { en: "Extra-large double bed", fr: "Grand lit double XL" },
+    type: { en: "1 Extra-large double bed • 40m²", fr: "1 Grand lit double XL • 40m²" },
     price: "XAF 100,000 / night",
     description: {
-      en: "Offering free toiletries and bathrobes, this triple room includes a private bathroom with a bath, a shower and a bidet. Features a tea/coffee maker and dining area.",
-      fr: "Offrant des articles de toilette et des peignoirs gratuits, cette chambre triple comprend une salle de bains privative avec baignoire, douche et bidet. Comprend un plateau thé/café et un coin repas."
+      en: "Offering free toiletries and bathrobes, this triple room includes a private bathroom with a bath, a shower and a bidet. Features a tea/coffee maker and dining area. Continental breakfast included.",
+      fr: "Offrant des articles de toilette et des peignoirs gratuits, cette chambre triple comprend une salle de bains privative avec baignoire, douche et bidet. Comprend un plateau thé/café et un coin repas. Petit-déjeuner continental inclus."
     },
     image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800",
     amenities: ["Spa Bath", "AC", "Tea/Coffee Maker", "Dining Area"]
   },
   {
-    id: 4,
+    id: 6,
+    title: { en: "Superior Studio", fr: "Studio Supérieur" },
+    type: { en: "1 Extra-large double bed", fr: "1 Grand lit double XL" },
+    price: "XAF 100,000 / night",
+    description: {
+      en: "Our superior studio offers ultimate comfort and privacy. Features premium bedding and modern amenities for a relaxing stay. Continental breakfast included.",
+      fr: "Notre studio supérieur offre un confort et une intimité ultimes. Dispose d'une literie de qualité supérieure et d'équipements modernes pour un séjour relaxant. Petit-déjeuner continental inclus."
+    },
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800",
+    amenities: ["Spa Bath", "AC", "Modern Design", "Privacy"]
+  },
+  {
+    id: 7,
+    title: { en: "Superior Triple Room", fr: "Chambre Triple Supérieure" },
+    type: { en: "3 Large double beds", fr: "3 Grands lits doubles" },
+    price: "XAF 100,000 / night",
+    description: {
+      en: "Perfect for larger groups or families, this spacious room features three comfortable double beds. Continental breakfast included.",
+      fr: "Parfaite pour les grands groupes ou les familles, cette chambre spacieuse dispose de trois lits doubles confortables. Petit-déjeuner continental inclus."
+    },
+    image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=800",
+    amenities: ["3 Beds", "AC", "Family Friendly", "Large Space"]
+  },
+  {
+    id: 8,
+    title: { en: "Double Room with Spa Bath", fr: "Chambre Double avec Baignoire Spa" },
+    type: { en: "2 Large double beds", fr: "2 Grands lits doubles" },
+    price: "XAF 100,000 / night",
+    description: {
+      en: "A luxurious space for groups or families, featuring two double beds and a premium spa bath for the ultimate relaxation. Continental breakfast included.",
+      fr: "Un espace luxueux pour les groupes ou les familles, doté de deux lits doubles et d'une baignoire spa haut de gamme pour une détente ultime. Petit-déjeuner continental inclus."
+    },
+    image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&q=80&w=800",
+    amenities: ["Spa Bath", "2 Double Beds", "Luxury Linens", "AC"]
+  },
+  {
+    id: 9,
     title: { en: "Deluxe Apartment", fr: "Appartement Deluxe" },
-    type: { en: "1 Extra-large & 1 Large double bed", fr: "1 XL & 1 Grand lit double" },
+    type: { en: "1 Extra-large & 1 Large double bed • 105m²", fr: "1 XL & 1 Grand lit double • 105m²" },
     price: "XAF 150,000 / night",
     description: {
-      en: "The spacious apartment features 1 bedroom and 1 bathroom with a shower. Featuring a balcony, air conditioning, and a flat-screen TV.",
-      fr: "Cet appartement spacieux comprend 1 chambre et 1 salle de bains avec douche. Doté d'un balcon, de la climatisation et d'une télévision à écran plat."
+      en: "The spacious apartment features 1 bedroom and 1 bathroom with a shower. Featuring a balcony, air conditioning, and a flat-screen TV. Continental breakfast included.",
+      fr: "Cet appartement spacieux comprend 1 chambre et 1 salle de bains avec douche. Doté d'un balcon, de la climatisation et d'une télévision à écran plat. Petit-déjeuner continental inclus."
     },
     image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=800",
     amenities: ["Living Area", "Balcony", "Kitchenette", "AC"]
   },
   {
-    id: 5,
+    id: 10,
     title: { en: "Superior Apartment with Balcony", fr: "Appartement Supérieur avec Balcon" },
     type: { en: "2 Bedrooms & 3 Sofa beds", fr: "2 Chambres & 3 Canapés-lits" },
     price: "XAF 200,000 / night",
     description: {
-      en: "Our most expansive accommodation, accommodating up to 6 guests. Features multiple bedrooms, a living room, and a private balcony with stunning views.",
-      fr: "Notre hébergement le plus vaste, pouvant accueillir jusqu'à 6 personnes. Comprend plusieurs chambres, un salon et un balcon privé avec une vue imprenable."
+      en: "Our most expansive accommodation, accommodating up to 6 guests. Features multiple bedrooms, a living room, and a private balcony with stunning views. Continental breakfast included.",
+      fr: "Notre hébergement le plus vaste, pouvant accueillir jusqu'à 6 personnes. Comprend plusieurs chambres, un salon et un balcon privé avec une vue imprenable. Petit-déjeuner continental inclus."
     },
     image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=800",
     amenities: ["6 Guests", "2 Bedrooms", "Large Balcony", "Rooftop View"]
-  },
-  {
-    id: 6,
-    title: { en: "Double Room with Spa Bath", fr: "Chambre Double avec Baignoire Spa" },
-    type: { en: "2 Large double beds", fr: "2 Grands lits doubles" },
-    price: "XAF 100,000 / night",
-    description: {
-      en: "A luxurious space for groups or families, featuring two double beds and a premium spa bath for the ultimate relaxation.",
-      fr: "Un espace luxueux pour les groupes ou les familles, doté de deux lits doubles et d'une baignoire spa haut de gamme pour une détente ultime."
-    },
-    image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&q=80&w=800",
-    amenities: ["Spa Bath", "2 Double Beds", "Luxury Linens", "AC"]
   }
 ];
 
