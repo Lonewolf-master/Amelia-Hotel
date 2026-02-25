@@ -5,6 +5,8 @@ import { useLanguage } from '../../context/LanguageContext';
 import { SectionContainer } from '../../components/common/SectionContainer';
 import { StayDetails } from './StayDetails';
 import { RoomSelection } from './RoomSelection';
+import { GuestDetails } from './GuestDetails';
+import { Confirmation } from './Confirmation';
 
 export const BookingFlow: React.FC = () => {
   const { currentStep } = useBooking();
@@ -65,8 +67,8 @@ export const BookingFlow: React.FC = () => {
         <div ref={stepContainerRef} className="bg-slate-900 border border-slate-800 p-8 md:p-16 luxury-shadow min-h-[400px]">
           {currentStep === 'stay' && <StayDetails />}
           {currentStep === 'rooms' && <RoomSelection />}
-          {currentStep === 'details' && <div className="text-white">Guest Details Component (Pending)</div>}
-          {currentStep === 'confirm' && <div className="text-white">Confirmation Component (Pending)</div>}
+          {currentStep === 'details' && <GuestDetails />}
+          {currentStep === 'confirm' && <Confirmation />}
         </div>
       </div>
     </SectionContainer>
