@@ -17,13 +17,13 @@ This plan outlines the steps to build the core 'Interactive Discovery' experienc
 - [x] Task: Implement: Shared UI components 9819f4f
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Layout & Global Components' (Protocol in workflow.md) cf3dcb7
 
-## Phase 3: Hero Section Implementation
+## Phase 3: Hero Section Implementation [checkpoint: 5ef358a]
 
 - [x] Task: Write Tests: Hero component animation logic 93c110f
 - [x] Task: Implement: Hero section with GSAP text reveals and parallax 8820627
 - [x] Task: Write Tests: Background media handling 40e1b0c
 - [x] Task: Implement: High-res image/video background for Hero 02af94d
-- [~] Task: Conductor - User Manual Verification 'Phase 3: Hero Section Implementation' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Hero Section Implementation' (Protocol in workflow.md) 5ef358a
 
 ## Phase 4: Interactive Room Gallery
 
