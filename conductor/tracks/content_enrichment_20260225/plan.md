@@ -28,8 +28,8 @@ This plan outlines the steps to tailor the Apart Hotel Amelia website with authe
 - [x] Task: Implement: FAQ section with provided house rules and general info 057b6fe
 - [x] Task: Conductor - User Manual Verification 'Phase 4: FAQs & Policies' (Protocol in workflow.md) 702e227
 
-## Phase 5: Final Polish
+## Phase 5: Final Polish [checkpoint: a8470f0]
 
 - [x] Task: Ensure all content is bilingual-friendly (English/French references) 0e58fb1
 - [x] Task: Final responsive audit for new sections 428e647
-- [~] Task: Conductor - User Manual Verification 'Phase 5: Final Polish' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 5: Final Polish' (Protocol in workflow.md) a8470f0
