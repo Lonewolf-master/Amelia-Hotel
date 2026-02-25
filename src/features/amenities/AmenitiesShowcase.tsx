@@ -20,7 +20,7 @@ const AMENITIES: Amenity[] = [
     title: "Rooftop Pool",
     description: "Experience the ultimate relaxation with panoramic views of Buea from our stunning open-all-year rooftop pool.",
     icon: <Waves className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 2,
@@ -34,14 +34,14 @@ const AMENITIES: Amenity[] = [
     title: "Sauna & Wellness",
     description: "Rejuvenate your body and soul in our tranquil sauna and hot tub facilities designed for pure luxury.",
     icon: <Bath className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1554133686-0c7664441ee6?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 4,
     title: "Signature Dining",
     description: "Savor a fusion of African and European cuisines in our elegant on-site restaurant and bar.",
     icon: <Coffee className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1550966842-30cae75851ce?auto=format&fit=crop&q=80&w=800"
   }
 ];
 
