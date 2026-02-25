@@ -4,6 +4,7 @@ import { Hero } from './features/hero/Hero'
 import { RoomGallery } from './features/rooms/RoomGallery'
 import { LocationSection } from './features/location/LocationSection'
 import { AmenitiesShowcase } from './features/amenities/AmenitiesShowcase'
+import { TestimonialsSlider } from './features/testimonials/TestimonialsSlider'
 import { ContactForm } from './features/contact/ContactForm'
 import { WhatsAppButton } from './components/common/WhatsAppButton'
 
@@ -16,6 +17,7 @@ export function App() {
         <Hero />
         <RoomGallery />
         <AmenitiesShowcase />
+        <TestimonialsSlider />
         <LocationSection />
         <ContactForm />
       </main>
@@ -25,7 +27,3 @@ export function App() {
     </div>
   )
 }
-
-
-
-

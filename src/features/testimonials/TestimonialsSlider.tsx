@@ -1,0 +1,167 @@
+import React, { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
+import { SectionContainer } from '../../components/common/SectionContainer';
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+
+interface Testimonial {
+  id: number;
+  name: string;
+  location: string;
+  date: string;
+  score: string;
+  content: string;
+}
+
+const TESTIMONIALS: Testimonial[] = [
+  {
+    id: 1,
+    name: "Leyuga",
+    location: "France",
+    date: "2025-02-01",
+    score: "10/10",
+    content: "The staffs were professional, kitchen staff, the reception staff, the security staff, the cleaners. I love every treatment they gave me, food, drinks were top. In fact, all was 100%."
+  },
+  {
+    id: 2,
+    name: "Theresa",
+    location: "Ireland",
+    date: "2024-12-20",
+    score: "10/10",
+    content: "Really nice and spacious room. Everything you wanted was there. Very clean and brilliant price including exception choice at breakfast. Staff is very welcoming. Good value for money."
+  },
+  {
+    id: 3,
+    name: "Tabuwe",
+    location: "Cameroon",
+    date: "2024-12-20",
+    score: "10/10",
+    content: "This place is top-notch luxury, very welcoming staff, good Internet. Rooms are large and clean. I was amazed with what we saw. Good value for the money, we will definitely stay there anytime we are in Buea."
+  },
+  {
+    id: 4,
+    name: "Adewale",
+    location: "Nigeria",
+    date: "2025-02-23",
+    score: "8.0",
+    content: "Excellent staff, clean rooms and very nice breakfast. The staff were very friendly and ready to accommodate my requests."
+  },
+  {
+    id: 5,
+    name: "Bonaventure",
+    location: "United States",
+    date: "2024-12-18",
+    score: "10/10",
+    content: "The staff was great. It was a pleasure to meet the owner who was down to earth and very hospitable. He went above and beyond to make sure we were comfortable."
+  }
+];
+
+export const TestimonialsSlider: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const slide = (direction: 'next' | 'prev') => {
+    let nextIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1;
+    if (nextIndex >= TESTIMONIALS.length) nextIndex = 0;
+    if (nextIndex < 0) nextIndex = TESTIMONIALS.length - 1;
+
+    gsap.to(cardRef.current, {
+      opacity: 0,
+      x: direction === 'next' ? -50 : 50,
+      duration: 0.4,
+      onComplete: () => {
+        setCurrentIndex(nextIndex);
+        gsap.fromTo(cardRef.current, 
+          { opacity: 0, x: direction === 'next' ? 50 : -50 },
+          { opacity: 1, x: 0, duration: 0.6, ease: 'power2.out' }
+        );
+      }
+    });
+  };
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+      }
+    });
+
+    tl.from('.testimonial-header', { opacity: 0, y: 30, duration: 1 })
+      .from(cardRef.current, { opacity: 0, scale: 0.95, duration: 1 }, '-=0.5');
+  }, []);
+
+  const testimonial = TESTIMONIALS[currentIndex];
+
+  return (
+    <SectionContainer id="testimonials" className="bg-slate-900 border-y border-gold/10">
+      <div ref={containerRef} className="max-w-5xl mx-auto">
+        <div className="testimonial-header text-center mb-20">
+          <h2 className="text-sm uppercase tracking-[0.4em] text-gold mb-4 font-sans font-medium">Testimonials</h2>
+          <h3 className="text-5xl md:text-6xl luxury-heading text-white">Guest Experiences</h3>
+        </div>
+
+        <div className="relative min-h-[450px] flex items-center justify-center">
+          <div 
+            ref={cardRef}
+            className="w-full bg-slate-950 p-12 md:p-20 border border-slate-800 luxury-shadow relative"
+          >
+            <Quote className="absolute top-10 left-10 w-16 h-16 text-gold/5 -z-0" />
+            
+            <div className="relative z-10">
+              <div className="flex items-center space-x-1 text-gold mb-8">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-gold" />
+                ))}
+                <span className="ml-4 text-white font-bold tracking-widest">{testimonial.score}</span>
+              </div>
+
+              <p className="text-2xl md:text-3xl text-slate-200 font-light italic leading-relaxed mb-12">
+                "{testimonial.content}"
+              </p>
+
+              <div className="flex flex-col md:flex-row md:items-center justify-between border-t border-slate-800 pt-8 gap-6">
+                <div>
+                  <h4 className="text-xl text-gold font-luxury tracking-wide">{testimonial.name}</h4>
+                  <p className="text-slate-500 uppercase tracking-widest text-xs mt-1">{testimonial.location}</p>
+                </div>
+                <div className="text-slate-600 text-xs uppercase tracking-widest">
+                  {new Date(testimonial.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <div className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-12">
+            <button 
+              onClick={() => slide('prev')}
+              aria-label="ChevronLeft"
+              className="p-4 rounded-full border border-gold/20 text-gold hover:bg-gold hover:text-slate-950 transition-all duration-300"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+          </div>
+          <div className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12">
+            <button 
+              onClick={() => slide('next')}
+              aria-label="ChevronRight"
+              className="p-4 rounded-full border border-gold/20 text-gold hover:bg-gold hover:text-slate-950 transition-all duration-300"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+
+        <div className="flex justify-center mt-12 space-x-2">
+          {TESTIMONIALS.map((_, i) => (
+            <div 
+              key={i}
+              className={`h-1 transition-all duration-500 ${i === currentIndex ? 'w-8 bg-gold' : 'w-4 bg-slate-800'}`}
+            />
+          ))}
+        </div>
+      </div>
+    </SectionContainer>
+  );
+};

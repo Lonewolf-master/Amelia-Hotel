@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import { TestimonialsSlider } from '../../features/testimonials/TestimonialsSlider'
 
 describe('TestimonialsSlider Component', () => {
@@ -11,14 +11,21 @@ describe('TestimonialsSlider Component', () => {
   it('renders authentic guest reviews', () => {
     render(<TestimonialsSlider />)
     expect(screen.getByText(/Leyuga/i)).toBeInTheDocument()
-    expect(screen.getByText(/Theresa/i)).toBeInTheDocument()
-    expect(screen.getByText(/Tabuwe/i)).toBeInTheDocument()
+    expect(screen.getByText(/France/i)).toBeInTheDocument()
   })
 
-  it('displays scores and nationalities', () => {
+  it('can navigate between testimonials', async () => {
     render(<TestimonialsSlider />)
-    expect(screen.getAllByText(/10\/10/i).length).toBeGreaterThan(0)
-    expect(screen.getByText(/France/i)).toBeInTheDocument()
-    expect(screen.getByText(/Ireland/i)).toBeInTheDocument()
+    const nextButton = screen.getByRole('button', { name: /chevronright/i })
+    
+    // Initial state
+    expect(screen.getByText(/Leyuga/i)).toBeInTheDocument()
+    
+    // Click next
+    fireEvent.click(nextButton)
+    
+    // We wait for the animation/state change (mocking/simplifying for the test)
+    // In this specific implementation, we check for the next name
+    expect(await screen.findByText(/Theresa/i)).toBeInTheDocument()
   })
 })
