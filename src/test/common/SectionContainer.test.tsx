@@ -9,7 +9,7 @@ describe('SectionContainer Component', () => {
       </SectionContainer>
     )
     expect(screen.getByTestId('child')).toBeInTheDocument()
-    expect(screen.getByRole('region')).toHaveClass('max-w-7xl')
+    expect(screen.getByTestId('child').parentElement).toHaveClass('max-w-7xl')
   })
 
   it('applies custom background classes', () => {

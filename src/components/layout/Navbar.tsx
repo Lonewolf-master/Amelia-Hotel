@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../common/Button';
 
 const Navbar: React.FC = () => {
   return (
@@ -14,9 +15,9 @@ const Navbar: React.FC = () => {
           <a href="#contact" className="hover:text-gold transition-colors duration-300">Contact</a>
         </div>
         
-        <button className="luxury-button !py-2 !px-6 text-xs">
+        <Button className="!py-2 !px-6 text-xs">
           Book Now
-        </button>
+        </Button>
       </div>
     </nav>
   );
