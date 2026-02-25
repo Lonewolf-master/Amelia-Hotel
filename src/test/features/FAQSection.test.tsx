@@ -10,15 +10,15 @@ describe('FAQSection Component', () => {
 
   it('renders common questions', () => {
     render(<FAQSection />)
-    expect(screen.getByText(/pool/i)).toBeInTheDocument()
-    expect(screen.getByText(/check-in/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/pool/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/check-in/i)[0]).toBeInTheDocument()
   })
 
   it('expands answers when clicking questions', () => {
     render(<FAQSection />)
-    const question = screen.getByText(/pool/i)
+    const question = screen.getAllByText(/pool/i)[0]
     fireEvent.click(question)
     // Assuming the answer contains "Yes" based on the provided info
-    expect(screen.getByText(/Yes, this hotel has a pool/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/Yes, this hotel has a pool/i)[0]).toBeInTheDocument()
   })
 })

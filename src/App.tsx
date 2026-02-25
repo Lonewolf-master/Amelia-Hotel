@@ -5,6 +5,7 @@ import { RoomGallery } from './features/rooms/RoomGallery'
 import { LocationSection } from './features/location/LocationSection'
 import { AmenitiesShowcase } from './features/amenities/AmenitiesShowcase'
 import { TestimonialsSlider } from './features/testimonials/TestimonialsSlider'
+import { FAQSection } from './features/faq/FAQSection'
 import { ContactForm } from './features/contact/ContactForm'
 import { WhatsAppButton } from './components/common/WhatsAppButton'
 
@@ -18,6 +19,7 @@ export function App() {
         <RoomGallery />
         <AmenitiesShowcase />
         <TestimonialsSlider />
+        <FAQSection />
         <LocationSection />
         <ContactForm />
       </main>
