@@ -3,6 +3,7 @@ import { Footer } from './components/layout/Footer'
 import { Hero } from './features/hero/Hero'
 import { RoomGallery } from './features/rooms/RoomGallery'
 import { LocationSection } from './features/location/LocationSection'
+import { ContactForm } from './features/contact/ContactForm'
 import { WhatsAppButton } from './components/common/WhatsAppButton'
 
 export function App() {
@@ -14,6 +15,7 @@ export function App() {
         <Hero />
         <RoomGallery />
         <LocationSection />
+        <ContactForm />
       </main>
 
       <Footer />
