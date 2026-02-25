@@ -13,6 +13,7 @@ interface Room {
   image: string;
   price: string;
   description: string;
+  amenities: string[];
 }
 
 const ROOMS: Room[] = [
@@ -22,7 +23,8 @@ const ROOMS: Room[] = [
     type: "Extra-large double bed",
     price: "XAF 80,000 / night",
     description: "Featuring free toiletries and bathrobes, this double room includes a private bathroom with a bath, a shower and a bidet. Spacious with a dining area and flat-screen TV.",
-    image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800",
+    amenities: ["AC", "Balcony", "Private Bath", "Flat-screen TV"]
   },
   {
     id: 2,
@@ -30,7 +32,8 @@ const ROOMS: Room[] = [
     type: "Large double bed",
     price: "XAF 40,000 / night",
     description: "Providing free toiletries and bathrobes, this double room includes a private bathroom with a shower, a bidet and a hairdryer. Featuring a balcony and air conditioning.",
-    image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=800",
+    amenities: ["AC", "Balcony", "Free Toiletries", "Bidet"]
   },
   {
     id: 3,
@@ -38,7 +41,8 @@ const ROOMS: Room[] = [
     type: "Extra-large double bed",
     price: "XAF 100,000 / night",
     description: "Offering free toiletries and bathrobes, this triple room includes a private bathroom with a bath, a shower and a bidet. Features a tea/coffee maker and dining area.",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800",
+    amenities: ["Spa Bath", "AC", "Tea/Coffee Maker", "Dining Area"]
   },
   {
     id: 4,
@@ -46,7 +50,8 @@ const ROOMS: Room[] = [
     type: "1 Extra-large & 1 Large double bed",
     price: "XAF 150,000 / night",
     description: "The spacious apartment features 1 bedroom and 1 bathroom with a shower. Featuring a balcony, air conditioning, and a flat-screen TV.",
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=800",
+    amenities: ["Living Area", "Balcony", "Kitchenette", "AC"]
   },
   {
     id: 5,
@@ -54,7 +59,8 @@ const ROOMS: Room[] = [
     type: "2 Bedrooms & 3 Sofa beds",
     price: "XAF 200,000 / night",
     description: "Our most expansive accommodation, accommodating up to 6 guests. Features multiple bedrooms, a living room, and a private balcony with stunning views.",
-    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=800",
+    amenities: ["6 Guests", "2 Bedrooms", "Large Balcony", "Rooftop View"]
   },
   {
     id: 6,
@@ -62,7 +68,8 @@ const ROOMS: Room[] = [
     type: "2 Large double beds",
     price: "XAF 100,000 / night",
     description: "A luxurious space for groups or families, featuring two double beds and a premium spa bath for the ultimate relaxation.",
-    image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&q=80&w=800",
+    amenities: ["Spa Bath", "2 Double Beds", "Luxury Linens", "AC"]
   }
 ];
 
@@ -200,13 +207,24 @@ export const RoomGallery: React.FC = () => {
                 </div>
                 
                 <div className="p-10 relative">
-                  <span className="text-xs uppercase tracking-[0.3em] text-gold/80 mb-3 block font-semibold">{room.type}</span>
-                  <h4 className="text-2xl text-white mb-4 font-luxury tracking-wide">{room.title}</h4>
-                  <p className="text-slate-400 text-sm mb-8 font-light leading-relaxed italic">
-                    {room.description}
-                  </p>
-                  <div className="flex justify-between items-center pt-6 border-t border-slate-800/50">
-                    <span className="text-gold font-bold tracking-widest text-lg">{room.price}</span>
+                                  <span className="text-xs uppercase tracking-[0.3em] text-gold/80 mb-3 block font-semibold">{room.type}</span>
+                                  <h4 className="text-2xl text-white mb-4 font-luxury tracking-wide">{room.title}</h4>
+                                  <p className="text-slate-400 text-sm mb-6 font-light leading-relaxed italic">
+                                    {room.description}
+                                  </p>
+                                  
+                                  <div className="flex flex-wrap gap-2 mb-8">
+                                    {room.amenities.map((amenity, idx) => (
+                                      <span 
+                                        key={idx} 
+                                        className="text-[10px] uppercase tracking-widest px-2 py-1 bg-slate-900 border border-slate-800 text-slate-400"
+                                      >
+                                        {amenity}
+                                      </span>
+                                    ))}
+                                  </div>
+                  
+                                  <div className="flex justify-between items-center pt-6 border-t border-slate-800/50">                    <span className="text-gold font-bold tracking-widest text-lg">{room.price}</span>
                     <button className="text-xs uppercase tracking-[0.2em] text-slate-300 hover:text-gold transition-colors underline underline-offset-8 decoration-gold/30 hover:decoration-gold font-bold">
                       View Details
                     </button>
