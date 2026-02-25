@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SectionContainer } from '../../components/common/SectionContainer';
 import { useLanguage } from '../../context/LanguageContext';
-import { Waves, Dumbbell, Coffee, Bath } from 'lucide-react';
+import { Waves, Dumbbell, Coffee, Bath, Clock } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,28 +20,28 @@ const AMENITIES: Amenity[] = [
     id: 1,
     title: { en: "Rooftop Pool", fr: "Piscine sur le Toit" },
     description: {
-      en: "Experience the ultimate relaxation with panoramic views of Buea from our stunning open-all-year rooftop pool.",
-      fr: "Vivez une relaxation ultime avec une vue panoramique sur Buea depuis notre superbe piscine sur le toit, ouverte toute l'année."
+      en: "Experience the ultimate relaxation with panoramic views of Buea from our stunning rooftop pool. Equipped with sun loungers, beach chairs, and sun umbrellas for your comfort.",
+      fr: "Vivez une relaxation ultime avec une vue panoramique sur Buea depuis notre superbe piscine sur le toit. Équipée de chaises longues et de parasols pour votre confort."
     },
     icon: <Waves className="w-8 h-8" />,
     image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 2,
-    title: { en: "Fitness Centre", fr: "Centre de Remise en Forme" },
+    title: { en: "Fitness & Wellness", fr: "Fitness & Bien-être" },
     description: {
-      en: "Keep up with your wellness routine in our state-of-the-art gym, equipped with modern cardio and strength training gear.",
-      fr: "Poursuivez votre routine de bien-être dans notre salle de sport ultramoderne, équipée d'appareils de cardio et de musculation modernes."
+      en: "Keep up with your routine in our state-of-the-art gym, or rejuvenate in our tranquil sauna and hot tub facilities designed for pure luxury.",
+      fr: "Poursuivez votre routine dans notre salle de sport ultramoderne, ou ressourcez-vous dans notre sauna tranquille et nos installations de spa."
     },
     icon: <Dumbbell className="w-8 h-8" />,
     image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 3,
-    title: { en: "Sauna & Wellness", fr: "Sauna & Bien-être" },
+    title: { en: "Safety & Security", fr: "Sûreté & Sécurité" },
     description: {
-      en: "Rejuvenate your body and soul in our tranquil sauna and hot tub facilities designed for pure luxury.",
-      fr: "Rajeunissez votre corps et votre esprit dans notre sauna tranquille et nos installations de spa conçues pour le pur luxe."
+      en: "Your peace of mind is our priority. Our facility is equipped with smoke alarms, fire extinguishers, security alarms, and 24-hour gate security.",
+      fr: "Votre tranquillité d'esprit est notre priorité. Notre établissement est équipé de détecteurs de fumée, d'extincteurs, d'alarmes de sécurité et d'une sécurité 24h/24."
     },
     icon: <Bath className="w-8 h-8" />,
     image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=800"
@@ -50,13 +50,25 @@ const AMENITIES: Amenity[] = [
     id: 4,
     title: { en: "Signature Dining", fr: "Restauration Signature" },
     description: {
-      en: "Savor a fusion of African and European cuisines in our elegant on-site restaurant and bar.",
-      fr: "Savourez une fusion de cuisines africaine et européenne dans notre élégant restaurant et bar sur place."
+      en: "Savor a fusion of African and American cuisines. We offer continental, buffet, and à la carte breakfast options to start your day perfectly.",
+      fr: "Savourez une fusion de cuisines africaine et américaine. Nous proposons des options de petit-déjeuner continental, buffet et à la carte."
     },
     icon: <Coffee className="w-8 h-8" />,
     image: "https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    id: 5,
+    title: { en: "24-Hour Concierge", fr: "Conciergerie 24h/24" },
+    description: {
+      en: "From car hire and pet bowls to local recommendations, our dedicated 24-hour front desk is here to ensure a seamless stay.",
+      fr: "De la location de voiture aux bols pour animaux, notre réception dédiée 24h/24 est là pour garantir un séjour sans faille."
+    },
+    icon: <Clock className="w-8 h-8" />,
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800"
   }
 ];
+
+const AMENITIES_WITH_ICONS = (amenity: Amenity) => amenity;
 
 export const AmenitiesShowcase: React.FC = () => {
   const { language } = useLanguage();

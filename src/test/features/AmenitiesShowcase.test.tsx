@@ -11,8 +11,8 @@ describe('AmenitiesShowcase Component', () => {
   it('renders all core amenities', () => {
     render(<AmenitiesShowcase />)
     expect(screen.getAllByText(/Rooftop Pool/i)[0]).toBeInTheDocument()
-    expect(screen.getAllByText(/Fitness Centre/i)[0]).toBeInTheDocument()
-    expect(screen.getAllByText(/Sauna & Wellness/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Fitness & Wellness/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Safety & Security/i)[0]).toBeInTheDocument()
     expect(screen.getAllByText(/Signature Dining/i)[0]).toBeInTheDocument()
   })
 })

@@ -24,11 +24,11 @@ const ROOMS: Room[] = [
     type: { en: "1 Large double bed • 25m²", fr: "1 Grand lit double • 25m²" },
     price: "XAF 40,000 / night",
     description: {
-      en: "Providing free toiletries and bathrobes, this double room includes a private bathroom with a shower, a bidet and a hairdryer. Featuring a balcony and air conditioning. Continental breakfast included.",
-      fr: "Dotée d'articles de toilette et de peignoirs gratuits, cette chambre double comprend une salle de bains privative avec douche, bidet et sèche-cheveux. Dispose d'un balcon et de la climatisation. Petit-déjeuner continental inclus."
+      en: "Providing free toiletries and bathrobes, this double room includes a private bathroom with a shower, a bidet and a hairdryer. Featuring a balcony, air conditioning, and slippers. Continental breakfast included.",
+      fr: "Dotée d'articles de toilette et de peignoirs gratuits, cette chambre double comprend une salle de bains privative avec douche, bidet et sèche-cheveux. Dispose d'un balcon, de la climatisation et de chaussons. Petit-déjeuner continental inclus."
     },
     image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=800",
-    amenities: ["AC", "Balcony", "Free Toiletries", "Bidet"]
+    amenities: ["AC", "Balcony", "Bidet", "Slippers"]
   },
   {
     id: 2,
@@ -36,8 +36,8 @@ const ROOMS: Room[] = [
     type: { en: "1 Large double bed • 31m²", fr: "1 Grand lit double • 31m²" },
     price: "XAF 60,000 / night",
     description: {
-      en: "The spacious twin room offers air conditioning, a tea and coffee maker, as well as a private bathroom featuring a shower and a bidet. Featuring a balcony. Continental breakfast included.",
-      fr: "La chambre lits jumeaux spacieuse dispose de la climatisation, d'un plateau/bouilloire ainsi que d'une salle de bains privative avec douche et bidet. Dotée d'un balcon. Petit-déjeuner continental inclus."
+      en: "The spacious twin room offers air conditioning, a tea and coffee maker, as well as a private bathroom featuring a shower, a bidet and bathrobes. Featuring a balcony and slippers. Continental breakfast included.",
+      fr: "La chambre lits jumeaux spacieuse dispose de la climatisation, d'un plateau/bouilloire ainsi que d'une salle de bains privative avec douche, bidet et peignoirs. Dotée d'un balcon et de chaussons. Petit-déjeuner continental inclus."
     },
     image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=800",
     amenities: ["AC", "Balcony", "Tea/Coffee Maker", "Bidet"]
@@ -48,11 +48,11 @@ const ROOMS: Room[] = [
     type: { en: "1 Extra-large double bed • 31m²", fr: "1 Grand lit double XL • 31m²" },
     price: "XAF 80,000 / night",
     description: { 
-      en: "Featuring free toiletries and bathrobes, this double room includes a private bathroom with a bath, a shower and a bidet. Spacious with a dining area and flat-screen TV. Continental breakfast included.",
-      fr: "Dotée d'articles de toilette gratuits et de peignoirs, cette chambre double comprend une salle de bains privative avec baignoire, douche et bidet. Spacieuse avec un coin repas et une télévision à écran plat. Petit-déjeuner continental inclus."
+      en: "Featuring free toiletries, bathrobes, and slippers, this double room includes a private bathroom with a bath, a shower and a bidet. Spacious with a dining area, wardrobe, and flat-screen TV. Continental breakfast included.",
+      fr: "Dotée d'articles de toilette gratuits, de peignoirs et de chaussons, cette chambre double comprend une salle de bains privative avec baignoire, douche et bidet. Spacieuse avec un coin repas, une armoire et une télévision à écran plat. Petit-déjeuner continental inclus."
     },
     image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800",
-    amenities: ["AC", "Balcony", "Private Bath", "Flat-screen TV"]
+    amenities: ["AC", "Dining Table", "Wardrobe", "Bidet"]
   },
   {
     id: 4,
