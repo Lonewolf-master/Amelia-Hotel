@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
             </li>
             <li className="flex items-center space-x-3">
               <Phone className="text-gold w-4 h-4" />
-              <span>+237 652422909</span>
+              <a href="https://wa.me/652422909" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">+237 652422909</a>
             </li>
             <li className="flex items-center space-x-3">
               <Mail className="text-gold w-4 h-4" />
