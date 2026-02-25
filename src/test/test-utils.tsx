@@ -1,11 +1,14 @@
 import React, { ReactElement } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 import { LanguageProvider } from '../context/LanguageContext';
+import { BookingProvider } from '../context/BookingContext';
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
   return (
     <LanguageProvider>
-      {children}
+      <BookingProvider>
+        {children}
+      </BookingProvider>
     </LanguageProvider>
   );
 };
