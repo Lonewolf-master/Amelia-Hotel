@@ -52,11 +52,21 @@ const Hero: React.FC = () => {
       ref={heroRef} 
       className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-slate-950"
     >
-      {/* Background Media Placeholder */}
-      <div className="hero-bg absolute inset-0 z-0 opacity-40 scale-110">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-transparent to-slate-950 z-10" />
-        {/* Placeholder image for now */}
-        <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center" />
+      {/* Background Media */}
+      <div className="hero-bg absolute inset-0 z-0 opacity-50 scale-110">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-transparent to-slate-950 z-10" />
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source 
+            src="https://player.vimeo.com/external/494191316.sd.mp4?s=1d7c390518d6e3c04d0937a01f7871b055375c32&profile_id=165" 
+            type="video/mp4" 
+          />
+        </video>
       </div>
 
       <div className="relative z-20 text-center px-8">
