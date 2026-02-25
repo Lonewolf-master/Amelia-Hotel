@@ -13,6 +13,7 @@ Apart Hotel Amelia is a modern luxury hospitality platform designed to blend hig
 
 ## Core Features & Priorities
 - **Interactive Visual Storytelling:** Leveraging GSAP for an immersive hero section (parallax, text reveals), fluid room showcases, and scroll-triggered content reveals.
+- **Interactive Discovery:** A core experience featuring a GSAP-animated hero section, interactive room gallery with scroll-triggered animations, and integrated location discovery.
 - **Comprehensive Admin Dashboard:** Tools for hotel staff to manage room availability, update pricing, and analyze occupancy rates.
 - **Direct Engagement Channels:** Seamless integration for WhatsApp click-to-chat and intuitive contact forms to facilitate personalized guest inquiries.
 
