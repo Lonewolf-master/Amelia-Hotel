@@ -12,4 +12,9 @@ describe('Hero Component', () => {
     render(<Hero />)
     expect(screen.getByText(/Discover More/i)).toBeInTheDocument()
   })
+
+  it('renders background media container', () => {
+    const { container } = render(<Hero />)
+    expect(container.querySelector('.hero-bg')).toBeInTheDocument()
+  })
 })

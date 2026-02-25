@@ -21,7 +21,7 @@ This plan outlines the steps to build the core 'Interactive Discovery' experienc
 
 - [x] Task: Write Tests: Hero component animation logic 93c110f
 - [x] Task: Implement: Hero section with GSAP text reveals and parallax 8820627
-- [ ] Task: Write Tests: Background media handling
+- [~] Task: Write Tests: Background media handling
 - [ ] Task: Implement: High-res image/video background for Hero
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Hero Section Implementation' (Protocol in workflow.md)
 
