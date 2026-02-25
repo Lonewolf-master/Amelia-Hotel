@@ -224,11 +224,12 @@ export const RoomGallery: React.FC = () => {
                                     ))}
                                   </div>
                   
-                                  <div className="flex justify-between items-center pt-6 border-t border-slate-800/50">                    <span className="text-gold font-bold tracking-widest text-lg">{room.price}</span>
-                    <button className="text-xs uppercase tracking-[0.2em] text-slate-300 hover:text-gold transition-colors underline underline-offset-8 decoration-gold/30 hover:decoration-gold font-bold">
-                      View Details
-                    </button>
-                  </div>
+                                  <div className="flex flex-col space-y-6 pt-8 border-t border-slate-800/50">
+                                    <span className="text-gold font-bold tracking-widest text-lg">{room.price}</span>
+                                    <button className="text-xs uppercase tracking-[0.2em] text-slate-300 hover:text-gold transition-colors font-bold text-left">
+                                      View Details
+                                    </button>
+                                  </div>
                 </div>
               </article>
             ))}

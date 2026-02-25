@@ -4,10 +4,10 @@ This plan outlines the steps to tailor the Apart Hotel Amelia website with authe
 
 ## Phase 1: Room Data & Gallery Update
 
-- [ ] Task: Update ROOMS constants with provided categories and prices (XAF)
-- [ ] Task: Refine RoomGallery component to display specific room amenities
-- [ ] Task: Write Tests: Verify accurate room data rendering
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Room Data & Gallery Update' (Protocol in workflow.md)
+- [x] Task: Update ROOMS constants with provided categories and prices (XAF) b233aed
+- [x] Task: Refine RoomGallery component to display specific room amenities 51f0a2e
+- [x] Task: Write Tests: Verify accurate room data rendering 0d7b81b
+- [~] Task: Conductor - User Manual Verification 'Phase 1: Room Data & Gallery Update' (Protocol in workflow.md)
 
 ## Phase 2: Amenities & Wellness Showcase
 
