@@ -18,7 +18,7 @@ This plan outlines the steps to tailor the Apart Hotel Amelia website with authe
 
 ## Phase 3: Guest Testimonials & Social Proof
 
-- [ ] Task: Write Tests: Testimonials slider logic
+- [~] Task: Write Tests: Testimonials slider logic
 - [ ] Task: Implement: GSAP-animated Testimonials slider with provided guest reviews
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Guest Testimonials & Social Proof' (Protocol in workflow.md)
 
