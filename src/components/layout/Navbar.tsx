@@ -15,9 +15,11 @@ export const Navbar: React.FC = () => {
           <a href="#contact" className="hover:text-gold transition-colors duration-300">Contact</a>
         </div>
         
-        <Button className="!py-2 !px-6 text-xs">
-          Book Now
-        </Button>
+        <div className="flex items-center space-x-6">
+          <Button className="!py-2 !px-6 text-xs">
+            Book Now
+          </Button>
+        </div>
       </div>
     </nav>
   );

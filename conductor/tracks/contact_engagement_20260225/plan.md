@@ -4,7 +4,7 @@ This plan outlines the steps to build the communication and engagement features 
 
 ## Phase 1: Global Social Media Update
 
-- [ ] Task: Update Navbar and Footer with provided social media links
+- [~] Task: Update Navbar and Footer with provided social media links
 - [ ] Task: Write Tests: Verify social link presence and URLs
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Global Social Media Update' (Protocol in workflow.md)
 

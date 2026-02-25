@@ -21,11 +21,11 @@ export const Footer: React.FC = () => {
             </li>
             <li className="flex items-center space-x-3">
               <Phone className="text-gold w-4 h-4" />
-              <span>+237 600 000 000</span>
+              <span>+237 652422909</span>
             </li>
             <li className="flex items-center space-x-3">
               <Mail className="text-gold w-4 h-4" />
-              <span>stay@amelia.com</span>
+              <a href="mailto:chidaluwisdomorima@gmail.com" className="hover:text-gold transition-colors">chidaluwisdomorima@gmail.com</a>
             </li>
           </ul>
         </div>
@@ -33,10 +33,10 @@ export const Footer: React.FC = () => {
         <div>
           <h4 className="text-gold uppercase tracking-widest text-sm font-semibold mb-6">Follow Us</h4>
           <div className="flex space-x-6 text-slate-400">
-            <a href="#" className="hover:text-gold transition-colors duration-300">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors duration-300">
               <Instagram className="w-6 h-6" />
             </a>
-            <a href="#" className="hover:text-gold transition-colors duration-300">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors duration-300">
               <Facebook className="w-6 h-6" />
             </a>
           </div>
