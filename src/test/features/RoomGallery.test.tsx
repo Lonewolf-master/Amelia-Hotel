@@ -12,6 +12,8 @@ describe('RoomGallery Component', () => {
     render(<RoomGallery />)
     const roomCards = screen.getAllByRole('article')
     expect(roomCards.length).toBeGreaterThan(0)
+    expect(screen.getByLabelText(/Previous rooms/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/Next rooms/i)).toBeInTheDocument()
   })
 
   it('renders authentic room categories and prices', () => {

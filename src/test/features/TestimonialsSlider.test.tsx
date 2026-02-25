@@ -16,7 +16,7 @@ describe('TestimonialsSlider Component', () => {
 
   it('can navigate between testimonials', async () => {
     render(<TestimonialsSlider />)
-    const nextButton = screen.getByRole('button', { name: /chevronright/i })
+    const nextButton = screen.getByRole('button', { name: /Next testimonial/i })
     
     // Initial state
     expect(screen.getByText(/Leyuga/i)).toBeInTheDocument()

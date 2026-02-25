@@ -290,14 +290,14 @@ export const RoomGallery: React.FC = () => {
             <button 
               onClick={prevSlide}
               disabled={currentIndex === 0}
-              aria-label="ChevronLeft"
+              aria-label="Previous rooms"
               className="p-4 border border-gold/20 text-gold hover:bg-gold hover:text-slate-950 transition-all duration-300 disabled:opacity-20 disabled:cursor-not-allowed"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button 
               onClick={nextSlide}
-              aria-label="ChevronRight"
+              aria-label="Next rooms"
               className="p-4 border border-gold/20 text-gold hover:bg-gold hover:text-slate-950 transition-all duration-300 disabled:opacity-20 disabled:cursor-not-allowed"
             >
               <ChevronRight className="w-6 h-6" />
@@ -323,6 +323,7 @@ export const RoomGallery: React.FC = () => {
                   <img 
                     src={room.images[0]} 
                     alt={room.title[language]}
+                    loading="lazy"
                     className="room-image w-full h-full object-cover transition-transform duration-700 opacity-80 group-hover:opacity-100"
                   />
                   <div className="room-overlay absolute inset-0 bg-slate-950/20 opacity-0 pointer-events-none transition-opacity duration-500" />

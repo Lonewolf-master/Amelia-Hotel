@@ -256,7 +256,7 @@ export const TestimonialsSlider: React.FC = () => {
           <div className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-12">
             <button 
               onClick={() => slide('prev')}
-              aria-label="ChevronLeft"
+              aria-label="Previous testimonial"
               className="p-4 rounded-full border border-gold/20 text-gold hover:bg-gold hover:text-slate-950 transition-all duration-300"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -265,7 +265,7 @@ export const TestimonialsSlider: React.FC = () => {
           <div className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12">
             <button 
               onClick={() => slide('next')}
-              aria-label="ChevronRight"
+              aria-label="Next testimonial"
               className="p-4 rounded-full border border-gold/20 text-gold hover:bg-gold hover:text-slate-950 transition-all duration-300"
             >
               <ChevronRight className="w-6 h-6" />

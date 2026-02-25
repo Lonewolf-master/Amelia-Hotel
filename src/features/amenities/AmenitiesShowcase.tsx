@@ -137,6 +137,7 @@ export const AmenitiesShowcase: React.FC = () => {
                   <img 
                     src={amenity.image} 
                     alt={amenity.title[language]}
+                    loading="lazy"
                     className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
                   />
                 </div>

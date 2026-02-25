@@ -75,6 +75,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
           <img 
             src={images[currentIndex]} 
             alt={title}
+            loading="lazy"
             className="w-full h-full object-cover"
           />
           
