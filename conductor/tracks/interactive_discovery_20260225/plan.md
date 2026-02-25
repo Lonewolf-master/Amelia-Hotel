@@ -35,7 +35,7 @@ This plan outlines the steps to build the core 'Interactive Discovery' experienc
 
 ## Phase 5: Location Discovery & Google Maps
 
-- [ ] Task: Write Tests: Geolocation and route calculation service
+- [~] Task: Write Tests: Geolocation and route calculation service
 - [ ] Task: Implement: Location discovery button and map reveal logic
 - [ ] Task: Write Tests: Google Maps integration
 - [ ] Task: Implement: Embedded Google Map with route visualization
