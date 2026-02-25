@@ -13,4 +13,10 @@ describe('RoomGallery Component', () => {
     const roomCards = screen.getAllByRole('article')
     expect(roomCards.length).toBeGreaterThan(0)
   })
+
+  it('renders View Details buttons for each room', () => {
+    render(<RoomGallery />)
+    const detailButtons = screen.getAllByText(/View Details/i)
+    expect(detailButtons.length).toBeGreaterThan(0)
+  })
 })
