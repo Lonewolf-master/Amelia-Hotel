@@ -94,15 +94,15 @@ export const ContactForm: React.FC = () => {
   return (
     <SectionContainer id="contact" className="bg-slate-900">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-sm uppercase tracking-[0.4em] text-gold mb-4 font-sans font-medium">Get in Touch</h2>
-          <h3 className="text-5xl md:text-6xl luxury-heading text-white">Contact Us</h3>
+          <h3 className="text-4xl md:text-6xl luxury-heading text-white">Contact Us</h3>
         </div>
 
         <form 
           ref={formRef}
           onSubmit={handleSubmit}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-slate-950 p-12 border border-slate-800 luxury-shadow"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 bg-slate-950 p-6 md:p-12 border border-slate-800 luxury-shadow"
         >
           <div className="space-y-2">
             <label htmlFor="name" className="text-xs uppercase tracking-widest text-slate-500 font-semibold">Name</label>
