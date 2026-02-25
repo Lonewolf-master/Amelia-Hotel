@@ -1,0 +1,39 @@
+# Implementation Plan: Content Enrichment & Amenities Showcase
+
+This plan outlines the steps to tailor the Apart Hotel Amelia website with authentic data and features.
+
+## Phase 1: Room Data & Gallery Update [checkpoint: 0dccb8f]
+
+- [x] Task: Update ROOMS constants with provided categories and prices (XAF) b233aed
+- [x] Task: Refine RoomGallery component to display specific room amenities 51f0a2e
+- [x] Task: Write Tests: Verify accurate room data rendering 0d7b81b
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Room Data & Gallery Update' (Protocol in workflow.md) 0dccb8f
+
+## Phase 2: Amenities & Wellness Showcase [checkpoint: 865d43e]
+
+- [x] Task: Write Tests: Amenities section visibility and layout 91237db
+- [x] Task: Implement: Interactive Amenities section (Rooftop Pool, Fitness, Sauna) c239984
+- [x] Task: Implement: Dining section highlighting African and European cuisine c239984
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Amenities & Wellness Showcase' (Protocol in workflow.md) 865d43e
+
+## Phase 3: Guest Testimonials & Social Proof [checkpoint: 807221c]
+
+- [x] Task: Write Tests: Testimonials slider logic d397d90
+- [x] Task: Implement: GSAP-animated Testimonials slider with provided guest reviews d692a30
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Guest Testimonials & Social Proof' (Protocol in workflow.md) 807221c
+
+## Phase 4: FAQs & Policies [checkpoint: 702e227]
+
+- [x] Task: Write Tests: FAQ accordion interaction b53d2f1
+- [x] Task: Implement: FAQ section with provided house rules and general info 057b6fe
+- [x] Task: Conductor - User Manual Verification 'Phase 4: FAQs & Policies' (Protocol in workflow.md) 702e227
+
+## Phase 5: Final Polish [checkpoint: a8470f0]
+
+- [x] Task: Ensure all content is bilingual-friendly (English/French references) 0e58fb1
+- [x] Task: Final responsive audit for new sections 428e647
+- [x] Task: Conductor - User Manual Verification 'Phase 5: Final Polish' (Protocol in workflow.md) a8470f0
+
+## Phase: Review Fixes
+
+- [x] Task: Apply review suggestions based on authentic Google review data f22cd27
