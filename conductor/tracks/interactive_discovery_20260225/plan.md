@@ -25,13 +25,13 @@ This plan outlines the steps to build the core 'Interactive Discovery' experienc
 - [x] Task: Implement: High-res image/video background for Hero 02af94d
 - [x] Task: Conductor - User Manual Verification 'Phase 3: Hero Section Implementation' (Protocol in workflow.md) 5ef358a
 
-## Phase 4: Interactive Room Gallery
+## Phase 4: Interactive Room Gallery [checkpoint: c3f3994]
 
 - [x] Task: Write Tests: Gallery scroll-trigger logic 2fbcba9
 - [x] Task: Implement: Room Gallery with GSAP ScrollTrigger animations 7c4ab59
 - [x] Task: Write Tests: Room entry hover interactions 0596071
 - [x] Task: Implement: Individual Room entries with detailed hover effects 2eb6965
-- [~] Task: Conductor - User Manual Verification 'Phase 4: Interactive Room Gallery' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Interactive Room Gallery' (Protocol in workflow.md) c3f3994
 
 ## Phase 5: Location Discovery & Google Maps
 
