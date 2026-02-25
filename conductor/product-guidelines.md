@@ -19,3 +19,4 @@ The visual design will reflect a **Classic Luxury** aesthetic while incorporatin
 ## Brand Messaging & Core Features
 - **Exclusive Escape:** Emphasize privacy, personalized service, and a retreat from the everyday.
 - **Interactive Location:** Clearly display the hotel's location with a prominent "Find Our Location" button. Upon clicking, it should reveal an embedded Google Map showing the route from the user's current position.
+- **Seamless Concierge:** Provide immediate, high-touch support via a persistent WhatsApp chat button, ensuring guests feel supported throughout their digital journey.
