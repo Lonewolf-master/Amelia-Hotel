@@ -11,8 +11,8 @@ This plan outlines the steps to tailor the Apart Hotel Amelia website with authe
 
 ## Phase 2: Amenities & Wellness Showcase
 
-- [~] Task: Write Tests: Amenities section visibility and layout
-- [ ] Task: Implement: Interactive Amenities section (Rooftop Pool, Fitness, Sauna)
+- [x] Task: Write Tests: Amenities section visibility and layout 91237db
+- [~] Task: Implement: Interactive Amenities section (Rooftop Pool, Fitness, Sauna)
 - [ ] Task: Implement: Dining section highlighting African and European cuisine
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Amenities & Wellness Showcase' (Protocol in workflow.md)
 
