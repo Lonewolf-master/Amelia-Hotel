@@ -31,5 +31,5 @@ This plan outlines the steps to tailor the Apart Hotel Amelia website with authe
 ## Phase 5: Final Polish
 
 - [x] Task: Ensure all content is bilingual-friendly (English/French references) 0e58fb1
-- [~] Task: Final responsive audit for new sections
-- [ ] Task: Conductor - User Manual Verification 'Phase 5: Final Polish' (Protocol in workflow.md)
+- [x] Task: Final responsive audit for new sections 428e647
+- [~] Task: Conductor - User Manual Verification 'Phase 5: Final Polish' (Protocol in workflow.md)

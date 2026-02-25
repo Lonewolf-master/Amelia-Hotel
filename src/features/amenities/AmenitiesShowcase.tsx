@@ -2,14 +2,15 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SectionContainer } from '../../components/common/SectionContainer';
+import { useLanguage } from '../../context/LanguageContext';
 import { Waves, Dumbbell, Coffee, Bath } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface Amenity {
   id: number;
-  title: string;
-  description: string;
+  title: Record<'en' | 'fr', string>;
+  description: Record<'en' | 'fr', string>;
   icon: React.ReactNode;
   image: string;
 }
@@ -17,37 +18,63 @@ interface Amenity {
 const AMENITIES: Amenity[] = [
   {
     id: 1,
-    title: "Rooftop Pool",
-    description: "Experience the ultimate relaxation with panoramic views of Buea from our stunning open-all-year rooftop pool.",
+    title: { en: "Rooftop Pool", fr: "Piscine sur le Toit" },
+    description: {
+      en: "Experience the ultimate relaxation with panoramic views of Buea from our stunning open-all-year rooftop pool.",
+      fr: "Vivez une relaxation ultime avec une vue panoramique sur Buea depuis notre superbe piscine sur le toit, ouverte toute l'année."
+    },
     icon: <Waves className="w-8 h-8" />,
     image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 2,
-    title: "Fitness Centre",
-    description: "Keep up with your wellness routine in our state-of-the-art gym, equipped with modern cardio and strength training gear.",
+    title: { en: "Fitness Centre", fr: "Centre de Remise en Forme" },
+    description: {
+      en: "Keep up with your wellness routine in our state-of-the-art gym, equipped with modern cardio and strength training gear.",
+      fr: "Poursuivez votre routine de bien-être dans notre salle de sport ultramoderne, équipée d'appareils de cardio et de musculation modernes."
+    },
     icon: <Dumbbell className="w-8 h-8" />,
     image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 3,
-    title: "Sauna & Wellness",
-    description: "Rejuvenate your body and soul in our tranquil sauna and hot tub facilities designed for pure luxury.",
+    title: { en: "Sauna & Wellness", fr: "Sauna & Bien-être" },
+    description: {
+      en: "Rejuvenate your body and soul in our tranquil sauna and hot tub facilities designed for pure luxury.",
+      fr: "Rajeunissez votre corps et votre esprit dans notre sauna tranquille et nos installations de spa conçues pour le pur luxe."
+    },
     icon: <Bath className="w-8 h-8" />,
     image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 4,
-    title: "Signature Dining",
-    description: "Savor a fusion of African and European cuisines in our elegant on-site restaurant and bar.",
+    title: { en: "Signature Dining", fr: "Restauration Signature" },
+    description: {
+      en: "Savor a fusion of African and European cuisines in our elegant on-site restaurant and bar.",
+      fr: "Savourez une fusion de cuisines africaine et européenne dans notre élégant restaurant et bar sur place."
+    },
     icon: <Coffee className="w-8 h-8" />,
     image: "https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=800"
   }
 ];
 
 export const AmenitiesShowcase: React.FC = () => {
+  const { language } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  const t = {
+    en: {
+      subheading: "Exceptional",
+      heading: "Luxury Facilities",
+      cta: "Discover Excellence"
+    },
+    fr: {
+      subheading: "Exceptionnel",
+      heading: "Installations de Luxe",
+      cta: "Découvrez l'Excellence"
+    }
+  }[language];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -81,8 +108,8 @@ export const AmenitiesShowcase: React.FC = () => {
     <SectionContainer id="amenities" className="bg-slate-950 overflow-hidden">
       <div ref={sectionRef}>
         <div className="text-center mb-24">
-          <h2 className="text-sm uppercase tracking-[0.4em] text-gold mb-4 font-sans font-medium">Exceptional</h2>
-          <h3 className="text-5xl md:text-6xl luxury-heading text-white">Luxury Facilities</h3>
+          <h2 className="text-sm uppercase tracking-[0.4em] text-gold mb-4 font-sans font-medium">{t.subheading}</h2>
+          <h3 className="text-5xl md:text-6xl luxury-heading text-white">{t.heading}</h3>
         </div>
 
         <div className="space-y-32">
@@ -97,7 +124,7 @@ export const AmenitiesShowcase: React.FC = () => {
                 <div className="aspect-video overflow-hidden border border-slate-800">
                   <img 
                     src={amenity.image} 
-                    alt={amenity.title}
+                    alt={amenity.title[language]}
                     className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
                   />
                 </div>
@@ -107,12 +134,12 @@ export const AmenitiesShowcase: React.FC = () => {
                 <div className="text-gold mb-4 flex justify-center md:justify-start">
                   {amenity.icon}
                 </div>
-                <h4 className="text-3xl md:text-4xl text-white font-luxury tracking-wide">{amenity.title}</h4>
+                <h4 className="text-3xl md:text-4xl text-white font-luxury tracking-wide">{amenity.title[language]}</h4>
                 <p className="text-slate-400 text-lg font-light leading-relaxed italic max-w-xl mx-auto md:mx-0">
-                  {amenity.description}
+                  {amenity.description[language]}
                 </p>
                 <div className="pt-4">
-                  <span className="text-xs uppercase tracking-[0.3em] text-gold font-bold">Discover Excellence</span>
+                  <span className="text-xs uppercase tracking-[0.3em] text-gold font-bold">{t.cta}</span>
                 </div>
               </div>
             </div>

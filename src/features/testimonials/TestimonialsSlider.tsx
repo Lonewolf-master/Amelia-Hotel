@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SectionContainer } from '../../components/common/SectionContainer';
+import { useLanguage } from '../../context/LanguageContext';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -9,59 +10,86 @@ gsap.registerPlugin(ScrollTrigger);
 interface Testimonial {
   id: number;
   name: string;
-  location: string;
+  location: Record<'en' | 'fr', string>;
   date: string;
   score: string;
-  content: string;
+  content: Record<'en' | 'fr', string>;
 }
 
 const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
     name: "Leyuga",
-    location: "France",
+    location: { en: "France", fr: "France" },
     date: "2025-02-01",
     score: "10/10",
-    content: "The staffs were professional, kitchen staff, the reception staff, the security staff, the cleaners. I love every treatment they gave me, food, drinks were top. In fact, all was 100%."
+    content: {
+      en: "The staffs were professional, kitchen staff, the reception staff, the security staff, the cleaners. I love every treatment they gave me, food, drinks were top. In fact, all was 100%.",
+      fr: "Le personnel était professionnel, le personnel de cuisine, le personnel de réception, le personnel de sécurité, les nettoyeurs. J'ai adoré chaque traitement qu'ils m'ont donné, la nourriture, les boissons étaient au top. En fait, tout était à 100%."
+    }
   },
   {
     id: 2,
     name: "Theresa",
-    location: "Ireland",
+    location: { en: "Ireland", fr: "Irlande" },
     date: "2024-12-20",
     score: "10/10",
-    content: "Really nice and spacious room. Everything you wanted was there. Very clean and brilliant price including exception choice at breakfast. Staff is very welcoming. Good value for money."
+    content: {
+      en: "Really nice and spacious room. Everything you wanted was there. Very clean and brilliant price including exception choice at breakfast. Staff is very welcoming. Good value for money.",
+      fr: "Chambre vraiment belle et spacieuse. Tout ce que vous vouliez était là. Très propre et prix brillant comprenant un choix exceptionnel au petit déjeuner. Le personnel est très accueillant. Bon rapport qualité prix."
+    }
   },
   {
     id: 3,
     name: "Tabuwe",
-    location: "Cameroon",
+    location: { en: "Cameroon", fr: "Cameroun" },
     date: "2024-12-20",
     score: "10/10",
-    content: "This place is top-notch luxury, very welcoming staff, good Internet. Rooms are large and clean. I was amazed with what we saw. Good value for the money, we will definitely stay there anytime we are in Buea."
+    content: {
+      en: "This place is top-notch luxury, very welcoming staff, good Internet. Rooms are large and clean. I was amazed with what we saw. Good value for the money, we will definitely stay there anytime we are in Buea.",
+      fr: "Cet endroit est un luxe de premier ordre, un personnel très accueillant, un bon Internet. Les chambres sont grandes et propres. J'ai été étonné de ce que nous avons vu. Bon rapport qualité-prix, nous y reviendrons certainement chaque fois que nous serons à Buea."
+    }
   },
   {
     id: 4,
     name: "Adewale",
-    location: "Nigeria",
+    location: { en: "Nigeria", fr: "Nigéria" },
     date: "2025-02-23",
     score: "8.0",
-    content: "Excellent staff, clean rooms and very nice breakfast. The staff were very friendly and ready to accommodate my requests."
+    content: {
+      en: "Excellent staff, clean rooms and very nice breakfast. The staff were very friendly and ready to accommodate my requests.",
+      fr: "Excellent personnel, chambres propres et très bon petit déjeuner. Le personnel était très sympathique et prêt à répondre à mes demandes."
+    }
   },
   {
     id: 5,
     name: "Bonaventure",
-    location: "United States",
+    location: { en: "United States", fr: "États-Unis" },
     date: "2024-12-18",
     score: "10/10",
-    content: "The staff was great. It was a pleasure to meet the owner who was down to earth and very hospitable. He went above and beyond to make sure we were comfortable."
+    content: {
+      en: "The staff was great. It was a pleasure to meet the owner who was down to earth and very hospitable. He went above and beyond to make sure we were comfortable.",
+      fr: "Le personnel était super. C'était un plaisir de rencontrer le propriétaire qui était terre à terre et très hospitalier. Il s'est surpassé pour s'assurer que nous étions à l'aise."
+    }
   }
 ];
 
 export const TestimonialsSlider: React.FC = () => {
+  const { language } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+
+  const t = {
+    en: {
+      subheading: "Testimonials",
+      heading: "Guest Experiences",
+    },
+    fr: {
+      subheading: "Témoignages",
+      heading: "Expériences Clients",
+    }
+  }[language];
 
   const slide = (direction: 'next' | 'prev') => {
     let nextIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1;
@@ -129,8 +157,8 @@ export const TestimonialsSlider: React.FC = () => {
     <SectionContainer id="testimonials" className="bg-slate-900 border-y border-gold/10">
       <div ref={containerRef} className="max-w-5xl mx-auto">
         <div className="testimonial-header text-center mb-20">
-          <h2 className="text-sm uppercase tracking-[0.4em] text-gold mb-4 font-sans font-medium">Testimonials</h2>
-          <h3 className="text-5xl md:text-6xl luxury-heading text-white">Guest Experiences</h3>
+          <h2 className="text-sm uppercase tracking-[0.4em] text-gold mb-4 font-sans font-medium">{t.subheading}</h2>
+          <h3 className="text-5xl md:text-6xl luxury-heading text-white">{t.heading}</h3>
         </div>
 
         <div className="relative min-h-[400px] md:min-h-[450px] flex items-center justify-center">
@@ -149,16 +177,16 @@ export const TestimonialsSlider: React.FC = () => {
               </div>
 
               <p className="text-xl md:text-3xl text-slate-200 font-light italic leading-relaxed mb-10 md:mb-12">
-                "{testimonial.content}"
+                "{testimonial.content[language]}"
               </p>
 
               <div className="flex flex-col md:flex-row md:items-center justify-between border-t border-slate-800 pt-6 md:pt-8 gap-4 md:gap-6">
                 <div>
                   <h4 className="text-lg md:text-xl text-gold font-luxury tracking-wide">{testimonial.name}</h4>
-                  <p className="text-slate-500 uppercase tracking-widest text-[10px] md:text-xs mt-1">{testimonial.location}</p>
+                  <p className="text-slate-500 uppercase tracking-widest text-[10px] md:text-xs mt-1">{testimonial.location[language]}</p>
                 </div>
                 <div className="text-slate-600 text-[10px] md:text-xs uppercase tracking-widest">
-                  {new Date(testimonial.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                  {new Date(testimonial.date).toLocaleDateString(language === 'en' ? 'en-US' : 'fr-FR', { month: 'long', year: 'numeric' })}
                 </div>
               </div>
             </div>

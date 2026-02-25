@@ -2,14 +2,35 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Button } from '../../components/common/Button';
+import { useLanguage } from '../../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const Hero: React.FC = () => {
+  const { language } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+
+  const content = {
+    en: {
+      welcome: "Welcome to",
+      exquisite: "Exquisite",
+      living: "Living",
+      description: "Discover a sanctuary of refined elegance and personalized service in the heart of Buea.",
+      cta: "Discover More"
+    },
+    fr: {
+      welcome: "Bienvenue à",
+      exquisite: "Vie",
+      living: "Exquise",
+      description: "Découvrez un sanctuaire d'élégance raffinée et de service personnalisé au cœur de Buea.",
+      cta: "Découvrir"
+    }
+  };
+
+  const t = content[language];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -79,10 +100,10 @@ export const Hero: React.FC = () => {
           ref={titleRef}
           className="text-6xl md:text-9xl mb-6 luxury-heading flex flex-col items-center"
         >
-          <span className="text-sm uppercase tracking-[0.5em] mb-4 text-gold/80 italic font-sans font-normal">Welcome to | Bienvenue à</span>
+          <span className="text-sm uppercase tracking-[0.5em] mb-4 text-gold/80 italic font-sans font-normal">{t.welcome}</span>
           <span className="flex flex-wrap justify-center gap-x-8">
-            <span>Exquisite</span>
-            <span className="text-white/90">Living</span>
+            <span>{t.exquisite}</span>
+            <span className="text-white/90">{t.living}</span>
           </span>
         </h1>
         
@@ -90,12 +111,12 @@ export const Hero: React.FC = () => {
           ref={subtitleRef}
           className="text-slate-300 max-w-2xl mx-auto mb-12 text-lg md:text-xl font-light tracking-wide drop-shadow-lg"
         >
-          Discover a sanctuary of refined elegance and personalized service in the heart of Buea.
+          {t.description}
         </p>
 
         <div ref={ctaRef}>
           <Button variant="luxury" className="px-12 py-4">
-            Discover More | Découvrir
+            {t.cta}
           </Button>
         </div>
       </div>
