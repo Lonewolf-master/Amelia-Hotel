@@ -3,7 +3,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionContainer } from '../../components/common/SectionContainer';
+import { Lightbox } from '../../components/common/Lightbox';
 import { useLanguage } from '../../context/LanguageContext';
+import { useBooking } from '../../context/BookingContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +13,7 @@ interface Room {
   id: number;
   title: Record<'en' | 'fr', string>;
   type: Record<'en' | 'fr', string>;
-  image: string;
+  images: string[]; // Changed from image: string
   price: string;
   description: Record<'en' | 'fr', string>;
   amenities: string[];
@@ -27,7 +29,11 @@ const ROOMS: Room[] = [
       en: "Providing free toiletries and bathrobes, this double room includes a private bathroom with a shower, a bidet and a hairdryer. Featuring a balcony, air conditioning, and slippers. Continental breakfast included.",
       fr: "Dotée d'articles de toilette et de peignoirs gratuits, cette chambre double comprend une salle de bains privative avec douche, bidet et sèche-cheveux. Dispose d'un balcon, de la climatisation et de chaussons. Petit-déjeuner continental inclus."
     },
-    image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format&fit=crop&q=80&w=800"
+    ],
     amenities: ["AC", "Balcony", "Bidet", "Slippers"]
   },
   {
@@ -39,7 +45,10 @@ const ROOMS: Room[] = [
       en: "The spacious twin room offers air conditioning, a tea and coffee maker, as well as a private bathroom featuring a shower, a bidet and bathrobes. Featuring a balcony and slippers. Continental breakfast included.",
       fr: "La chambre lits jumeaux spacieuse dispose de la climatisation, d'un plateau/bouilloire ainsi que d'une salle de bains privative avec douche, bidet et peignoirs. Dotée d'un balcon et de chaussons. Petit-déjeuner continental inclus."
     },
-    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=800"
+    ],
     amenities: ["AC", "Balcony", "Tea/Coffee Maker", "Bidet"]
   },
   {
@@ -51,7 +60,10 @@ const ROOMS: Room[] = [
       en: "Featuring free toiletries, bathrobes, and slippers, this double room includes a private bathroom with a bath, a shower and a bidet. Spacious with a dining area, wardrobe, and flat-screen TV. Continental breakfast included.",
       fr: "Dotée d'articles de toilette gratuits, de peignoirs et de chaussons, cette chambre double comprend une salle de bains privative avec baignoire, douche et bidet. Spacieuse avec un coin repas, une armoire et une télévision à écran plat. Petit-déjeuner continental inclus."
     },
-    image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800"
+    ],
     amenities: ["AC", "Dining Table", "Wardrobe", "Bidet"]
   },
   {
@@ -63,7 +75,10 @@ const ROOMS: Room[] = [
       en: "Offering free toiletries and bathrobes, this studio includes a private bathroom with a bath, a shower and a bidet. Features a flat-screen TV and dining area. Continental breakfast included.",
       fr: "Offrant des articles de toilette et des peignoirs gratuits, ce studio comprend une salle de bains privative avec baignoire, douche et bidet. Dispose d'une télévision à écran plat et d'un coin repas. Petit-déjeuner continental inclus."
     },
-    image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&q=80&w=800"
+    ],
     amenities: ["Spa Bath", "AC", "Kitchenette", "Dining Area"]
   },
   {
@@ -75,7 +90,10 @@ const ROOMS: Room[] = [
       en: "Offering free toiletries and bathrobes, this triple room includes a private bathroom with a bath, a shower and a bidet. Features a tea/coffee maker and dining area. Continental breakfast included.",
       fr: "Offrant des articles de toilette et des peignoirs gratuits, cette chambre triple comprend une salle de bains privative avec baignoire, douche et bidet. Comprend un plateau thé/café et un coin repas. Petit-déjeuner continental inclus."
     },
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800"
+    ],
     amenities: ["Spa Bath", "AC", "Tea/Coffee Maker", "Dining Area"]
   },
   {
@@ -87,7 +105,10 @@ const ROOMS: Room[] = [
       en: "Our superior studio offers ultimate comfort and privacy. Features premium bedding and modern amenities for a relaxing stay. Continental breakfast included.",
       fr: "Notre studio supérieur offre un confort et une intimité ultimes. Dispose d'une literie de qualité supérieure et d'équipements modernes pour un séjour relaxant. Petit-déjeuner continental inclus."
     },
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=800"
+    ],
     amenities: ["Spa Bath", "AC", "Modern Design", "Privacy"]
   },
   {
@@ -99,7 +120,10 @@ const ROOMS: Room[] = [
       en: "Perfect for larger groups or families, this spacious room features three comfortable double beds. Continental breakfast included.",
       fr: "Parfaite pour les grands groupes ou les familles, cette chambre spacieuse dispose de trois lits doubles confortables. Petit-déjeuner continental inclus."
     },
-    image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800"
+    ],
     amenities: ["3 Beds", "AC", "Family Friendly", "Large Space"]
   },
   {
@@ -111,7 +135,10 @@ const ROOMS: Room[] = [
       en: "A luxurious space for groups or families, featuring two double beds and a premium spa bath for the ultimate relaxation. Continental breakfast included.",
       fr: "Un espace luxueux pour les groupes ou les familles, doté de deux lits doubles et d'une baignoire spa haut de gamme pour une détente ultime. Petit-déjeuner continental inclus."
     },
-    image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&q=80&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800"
+    ],
     amenities: ["Spa Bath", "2 Double Beds", "Luxury Linens", "AC"]
   },
   {
@@ -123,7 +150,10 @@ const ROOMS: Room[] = [
       en: "The spacious apartment features 1 bedroom and 1 bathroom with a shower. Featuring a balcony, air conditioning, and a flat-screen TV. Continental breakfast included.",
       fr: "Cet appartement spacieux comprend 1 chambre et 1 salle de bains avec douche. Doté d'un balcon, de la climatisation et d'une télévision à écran plat. Petit-déjeuner continental inclus."
     },
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&q=80&w=800"
+    ],
     amenities: ["Living Area", "Balcony", "Kitchenette", "AC"]
   },
   {
@@ -135,16 +165,22 @@ const ROOMS: Room[] = [
       en: "Our most expansive accommodation, accommodating up to 6 guests. Features multiple bedrooms, a living room, and a private balcony with stunning views. Continental breakfast included.",
       fr: "Notre hébergement le plus vaste, pouvant accueillir jusqu'à 6 personnes. Comprend plusieurs chambres, un salon et un balcon privé avec une vue imprenable. Petit-déjeuner continental inclus."
     },
-    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=800"
+    ],
     amenities: ["6 Guests", "2 Bedrooms", "Large Balcony", "Rooftop View"]
   }
 ];
 
+
 export const RoomGallery: React.FC = () => {
   const { language } = useLanguage();
+  const { updateData, setStep } = useBooking();
   const sectionRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const t = {
@@ -280,11 +316,12 @@ export const RoomGallery: React.FC = () => {
                 ref={el => cardsRef.current[index] = el}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave(index)}
+                onClick={() => setSelectedRoom(room)}
                 className="min-w-full md:min-w-[calc(33.333%-1.7rem)] group relative overflow-hidden bg-slate-950 border border-slate-800 hover:border-gold/40 transition-colors duration-500 luxury-shadow cursor-pointer"
               >
                 <div className="aspect-[4/5] overflow-hidden relative">
                   <img 
-                    src={room.image} 
+                    src={room.images[0]} 
                     alt={room.title[language]}
                     className="room-image w-full h-full object-cover transition-transform duration-700 opacity-80 group-hover:opacity-100"
                   />
@@ -321,6 +358,23 @@ export const RoomGallery: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {selectedRoom && (
+        <Lightbox 
+          isOpen={!!selectedRoom}
+          onClose={() => setSelectedRoom(null)}
+          images={selectedRoom.images}
+          title={selectedRoom.title[language]}
+          description={selectedRoom.description[language]}
+          price={selectedRoom.price.replace('/ night', t.priceSuffix)}
+          onBookNow={() => {
+            updateData({ roomId: selectedRoom.id });
+            setStep('stay');
+            setSelectedRoom(null);
+            document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        />
+      )}
     </SectionContainer>
   );
 };
