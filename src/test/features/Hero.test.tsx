@@ -15,6 +15,6 @@ describe('Hero Component', () => {
 
   it('renders background media container', () => {
     const { container } = render(<Hero />)
-    expect(container.querySelector('.hero-bg')).toBeInTheDocument()
+    expect(container.querySelector('.hero-bg-container')).toBeInTheDocument()
   })
 })

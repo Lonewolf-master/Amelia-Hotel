@@ -32,8 +32,8 @@ const Hero: React.FC = () => {
       );
 
       // Parallax Effect
-      gsap.to('.hero-bg', {
-        yPercent: 30,
+      gsap.to('.hero-bg-container', {
+        yPercent: 20,
         ease: 'none',
         scrollTrigger: {
           trigger: heroRef.current,
@@ -52,18 +52,23 @@ const Hero: React.FC = () => {
       ref={heroRef} 
       className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-slate-950"
     >
-      {/* Background Media */}
-      <div className="hero-bg absolute inset-0 z-0 opacity-50 scale-110">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-transparent to-slate-950 z-10" />
+      {/* Background Container */}
+      <div className="hero-bg-container absolute inset-0 z-0 scale-110">
+        {/* Overlays for depth and readability */}
+        <div className="absolute inset-0 bg-slate-950/40 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-transparent to-slate-950 z-10" />
+        
+        {/* Video with Poster (Initial Image) */}
         <video 
-          autoPlay 
+          autoPlay
           loop 
           muted 
           playsInline
+          poster="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           className="w-full h-full object-cover"
         >
           <source 
-            src="https://player.vimeo.com/external/494191316.sd.mp4?s=1d7c390518d6e3c04d0937a01f7871b055375c32&profile_id=165" 
+            src="https://videos.pexels.com/video-files/3205736/3205736-uhd_2560_1440_25fps.mp4" 
             type="video/mp4" 
           />
         </video>
@@ -83,7 +88,7 @@ const Hero: React.FC = () => {
         
         <p 
           ref={subtitleRef}
-          className="text-slate-400 max-w-2xl mx-auto mb-12 text-lg md:text-xl font-light tracking-wide"
+          className="text-slate-300 max-w-2xl mx-auto mb-12 text-lg md:text-xl font-light tracking-wide drop-shadow-lg"
         >
           Discover a sanctuary of refined elegance and personalized service in the heart of Buea.
         </p>
