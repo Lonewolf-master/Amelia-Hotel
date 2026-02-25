@@ -31,7 +31,7 @@ This plan outlines the steps to build the core 'Interactive Discovery' experienc
 - [x] Task: Implement: Room Gallery with GSAP ScrollTrigger animations 7c4ab59
 - [x] Task: Write Tests: Room entry hover interactions 0596071
 - [x] Task: Implement: Individual Room entries with detailed hover effects 2eb6965
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: Interactive Room Gallery' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Phase 4: Interactive Room Gallery' (Protocol in workflow.md)
 
 ## Phase 5: Location Discovery & Google Maps
 
