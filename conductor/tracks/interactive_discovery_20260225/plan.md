@@ -27,7 +27,7 @@ This plan outlines the steps to build the core 'Interactive Discovery' experienc
 
 ## Phase 4: Interactive Room Gallery
 
-- [ ] Task: Write Tests: Gallery scroll-trigger logic
+- [~] Task: Write Tests: Gallery scroll-trigger logic
 - [ ] Task: Implement: Room Gallery with GSAP ScrollTrigger animations
 - [ ] Task: Write Tests: Room entry hover interactions
 - [ ] Task: Implement: Individual Room entries with detailed hover effects
