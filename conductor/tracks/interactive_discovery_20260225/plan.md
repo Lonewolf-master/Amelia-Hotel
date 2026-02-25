@@ -5,7 +5,7 @@ This plan outlines the steps to build the core 'Interactive Discovery' experienc
 ## Phase 1: Project Scaffolding & Configuration
 
 - [x] Task: Initialize React/Vite project with TypeScript c43d71a
-- [~] Task: Install and configure core dependencies (GSAP, Tailwind, Lucide, Vitest)
+- [x] Task: Install and configure core dependencies (GSAP, Tailwind, Lucide, Vitest) a90e47b
 - [ ] Task: Set up project structure and global styles (Luxury Theme)
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Project Scaffolding & Configuration' (Protocol in workflow.md)
 
