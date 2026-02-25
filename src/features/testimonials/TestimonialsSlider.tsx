@@ -64,13 +64,68 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 5,
+    name: "Amstrong Agha",
+    location: { en: "Holiday | Friends", fr: "Vacances | Amis" },
+    date: "2024-10-25",
+    score: "5/5",
+    content: {
+      en: "Hotel highlights Luxury. Modern rooms. All kinds of food available both African and European dishes. Security at the gate and fully mobile walkability.",
+      fr: "Hôtel de luxe. Chambres modernes. Toutes sortes de plats disponibles, africains et européens. Sécurité au portail et accessibilité totale."
+    }
+  },
+  {
+    id: 6,
+    name: "Boris Nwa",
+    location: { en: "Holiday | Couple", fr: "Vacances | Couple" },
+    date: "2025-03-20",
+    score: "5/5",
+    content: {
+      en: "The Amelia hotel is a touch of class and a luxury hotel that speaks for itself. From the view outside, it's like you are going to a paradise on earth.",
+      fr: "L'hôtel Amelia est une touche de classe et un hôtel de luxe qui parle de lui-même. De l'extérieur, on dirait que vous allez dans un paradis sur terre."
+    }
+  },
+  {
+    id: 7,
+    name: "EPANTI EKANGOUO GAEL",
+    location: { en: "Cameroon", fr: "Cameroun" },
+    date: "2024-02-25",
+    score: "5/5",
+    content: {
+      en: "It was a test of luxury. There's luxury in Buea, just go there and have a lifetime experience. Highly recommended.",
+      fr: "C'était un test de luxe. Il y a du luxe à Buea, allez-y et vivez une expérience inoubliable. Hautement recommandé."
+    }
+  },
+  {
+    id: 8,
+    name: "mokake luma",
+    location: { en: "Cameroon", fr: "Cameroun" },
+    date: "2024-02-25",
+    score: "5/5",
+    content: {
+      en: "I had an awesome experience. If it were possible to give 6 stars, I would have given it. Truly exceptional service.",
+      fr: "J'ai vécu une expérience géniale. S'il était possible de donner 6 étoiles, je les aurais données. Un service vraiment exceptionnel."
+    }
+  },
+  {
+    id: 9,
     name: "Bonaventure",
     location: { en: "United States", fr: "États-Unis" },
     date: "2024-12-18",
     score: "10/10",
     content: {
-      en: "The staff was great. It was a pleasure to meet the owner who was down to earth and very hospitable. He went above and beyond to make sure we were comfortable.",
-      fr: "Le personnel était super. C'était un plaisir de rencontrer le propriétaire qui était terre à terre et très hospitalier. Il s'est surpassé pour s'assurer que nous étions à l'aise."
+      en: "The staff was great. It was a pleasure to meet the owner who was down to earth and very hospitable. He went above and beyond.",
+      fr: "Le personnel était super. C'était un plaisir de rencontrer le propriétaire qui était terre à terre et très hospitalier. Il s'est surpassé."
+    }
+  },
+  {
+    id: 10,
+    name: "chiabo Phanuel",
+    location: { en: "Holiday | Solo", fr: "Vacances | Solo" },
+    date: "2024-02-25",
+    score: "5/5",
+    content: {
+      en: "Rooms are quite spacious and comfy. The hotel highlights luxury and quietness. A perfect retreat for solo travelers.",
+      fr: "Les chambres sont assez spacieuses et confortables. L'hôtel met l'accent sur le luxe et le calme. Une retraite parfaite pour les voyageurs en solo."
     }
   }
 ];
