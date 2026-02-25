@@ -6,7 +6,7 @@ interface SectionContainerProps {
   id?: string;
 }
 
-const SectionContainer: React.FC<SectionContainerProps> = ({ 
+export const SectionContainer: React.FC<SectionContainerProps> = ({ 
   children, 
   className = '', 
   id 
@@ -23,5 +23,3 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     </section>
   );
 };
-
-export default SectionContainer;

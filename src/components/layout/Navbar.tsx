@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '../common/Button';
+import { Button } from '../common/Button';
 
-const Navbar: React.FC = () => {
+export const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-gold/20 px-8 py-6">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -22,5 +22,3 @@ const Navbar: React.FC = () => {
     </nav>
   );
 };
-
-export default Navbar;

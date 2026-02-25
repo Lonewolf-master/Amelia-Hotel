@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import LocationSection from '../../features/location/LocationSection'
+import { LocationSection } from '../../features/location/LocationSection'
 
 describe('LocationSection Component', () => {
   it('renders the find location button', () => {

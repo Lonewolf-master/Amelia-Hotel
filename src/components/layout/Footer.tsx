@@ -1,7 +1,7 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-950 border-t border-gold/20 pt-20 pb-10 px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 mb-20">
@@ -49,5 +49,3 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
-
-export default Footer;

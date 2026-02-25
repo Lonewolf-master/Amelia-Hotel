@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import SectionContainer from '../../components/common/SectionContainer';
+import { SectionContainer } from '../../components/common/SectionContainer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,7 +66,7 @@ const ROOMS: Room[] = [
   }
 ];
 
-const RoomGallery: React.FC = () => {
+export const RoomGallery: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -220,5 +220,3 @@ const RoomGallery: React.FC = () => {
     </SectionContainer>
   );
 };
-
-export default RoomGallery;

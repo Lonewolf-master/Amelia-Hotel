@@ -33,10 +33,10 @@ This plan outlines the steps to build the core 'Interactive Discovery' experienc
 - [x] Task: Implement: Individual Room entries with detailed hover effects 2eb6965
 - [x] Task: Conductor - User Manual Verification 'Phase 4: Interactive Room Gallery' (Protocol in workflow.md) c3f3994
 
-## Phase 5: Location Discovery & Google Maps
+## Phase 5: Location Discovery & Google Maps [checkpoint: eaf9ac8]
 
-- [~] Task: Write Tests: Geolocation and route calculation service
-- [ ] Task: Implement: Location discovery button and map reveal logic
+- [x] Task: Write Tests: Geolocation and route calculation service 7d485f5
+- [x] Task: Implement: Location discovery button and map reveal logic
 - [ ] Task: Write Tests: Google Maps integration
 - [ ] Task: Implement: Embedded Google Map with route visualization
 - [ ] Task: Conductor - User Manual Verification 'Phase 5: Location Discovery & Google Maps' (Protocol in workflow.md)
@@ -47,3 +47,7 @@ This plan outlines the steps to build the core 'Interactive Discovery' experienc
 - [ ] Task: Implement: Cross-device responsiveness audit and fixes
 - [ ] Task: Task: Performance optimization (Image lazy loading, GSAP cleanup)
 - [ ] Task: Conductor - User Manual Verification 'Phase 6: Final Polish & Optimization' (Protocol in workflow.md)
+
+## Phase: Review Fixes
+- [~] Task: Apply review suggestions
+

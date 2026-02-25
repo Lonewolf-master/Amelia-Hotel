@@ -1,9 +1,10 @@
-import Navbar from './components/layout/Navbar'
-import Footer from './components/layout/Footer'
-import Hero from './features/hero/Hero'
-import RoomGallery from './features/rooms/RoomGallery'
+import { Navbar } from './components/layout/Navbar'
+import { Footer } from './components/layout/Footer'
+import { Hero } from './features/hero/Hero'
+import { RoomGallery } from './features/rooms/RoomGallery'
+import { LocationSection } from './features/location/LocationSection'
 
-function App() {
+export function App() {
   return (
     <div className="min-h-screen bg-slate-950">
       <Navbar />
@@ -11,6 +12,7 @@ function App() {
       <main>
         <Hero />
         <RoomGallery />
+        <LocationSection />
       </main>
 
       <Footer />
@@ -18,7 +20,6 @@ function App() {
   )
 }
 
-export default App
 
 
 

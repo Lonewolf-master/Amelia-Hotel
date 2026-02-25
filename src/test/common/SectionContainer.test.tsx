@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import SectionContainer from '../../components/common/SectionContainer'
+import { SectionContainer } from '../../components/common/SectionContainer'
 
 describe('SectionContainer Component', () => {
   it('renders children within a max-width container', () => {

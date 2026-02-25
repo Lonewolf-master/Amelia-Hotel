@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import RoomGallery from '../../features/rooms/RoomGallery'
+import { RoomGallery } from '../../features/rooms/RoomGallery'
 
 describe('RoomGallery Component', () => {
   it('renders the gallery section title', () => {

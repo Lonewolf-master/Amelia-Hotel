@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Footer from '../../components/layout/Footer'
+import { Footer } from '../../components/layout/Footer'
 
 describe('Footer Component', () => {
   it('renders the hotel name and copyright', () => {

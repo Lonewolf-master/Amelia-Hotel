@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Button from '../../components/common/Button';
+import { Button } from '../../components/common/Button';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Hero: React.FC = () => {
+export const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -107,5 +107,3 @@ const Hero: React.FC = () => {
     </section>
   );
 };
-
-export default Hero;
