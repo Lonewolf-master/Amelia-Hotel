@@ -1,5 +1,6 @@
 import { Navbar } from './components/layout/Navbar'
 import { Footer } from './components/layout/Footer'
+import { SEO } from './components/common/SEO'
 import { Hero } from './features/hero/Hero'
 import { RoomGallery } from './features/rooms/RoomGallery'
 import { BookingFlow } from './features/booking/BookingFlow'
@@ -13,6 +14,7 @@ import { WhatsAppButton } from './components/common/WhatsAppButton'
 export function App() {
   return (
     <div className="min-h-screen bg-slate-950">
+      <SEO />
       <Navbar />
       
       <main>

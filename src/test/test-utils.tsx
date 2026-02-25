@@ -2,14 +2,17 @@ import React, { ReactElement } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 import { LanguageProvider } from '../context/LanguageContext';
 import { BookingProvider } from '../context/BookingContext';
+import { HelmetProvider } from 'react-helmet-async';
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
   return (
-    <LanguageProvider>
-      <BookingProvider>
-        {children}
-      </BookingProvider>
-    </LanguageProvider>
+    <HelmetProvider>
+      <LanguageProvider>
+        <BookingProvider>
+          {children}
+        </BookingProvider>
+      </LanguageProvider>
+    </HelmetProvider>
   );
 };
 
