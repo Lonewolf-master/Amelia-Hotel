@@ -54,9 +54,7 @@ export const ContactForm: React.FC = () => {
     setSubmitted(true);
     setErrors({});
     
-    // In a real app, you'd send to an API or use mailto
-    // const mailtoUrl = `mailto:chidaluwisdomorima@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(formData.message)}`;
-    // window.location.href = mailtoUrl;
+    console.log('Form submitted to: chidaluwisdomorima@gmail.com', formData);
   };
 
   useEffect(() => {
