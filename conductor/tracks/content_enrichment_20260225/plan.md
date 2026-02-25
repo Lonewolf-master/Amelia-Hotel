@@ -16,11 +16,11 @@ This plan outlines the steps to tailor the Apart Hotel Amelia website with authe
 - [x] Task: Implement: Dining section highlighting African and European cuisine c239984
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Amenities & Wellness Showcase' (Protocol in workflow.md) 865d43e
 
-## Phase 3: Guest Testimonials & Social Proof
+## Phase 3: Guest Testimonials & Social Proof [checkpoint: 807221c]
 
 - [x] Task: Write Tests: Testimonials slider logic d397d90
 - [x] Task: Implement: GSAP-animated Testimonials slider with provided guest reviews d692a30
-- [~] Task: Conductor - User Manual Verification 'Phase 3: Guest Testimonials & Social Proof' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Guest Testimonials & Social Proof' (Protocol in workflow.md) 807221c
 
 ## Phase 4: FAQs & Policies
 
