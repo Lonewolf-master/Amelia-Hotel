@@ -11,7 +11,7 @@ This plan outlines the steps to build the communication and engagement features 
 ## Phase 2: WhatsApp Integration
 
 - [x] Task: Write Tests: WhatsApp floating button logic ebbb3a5
-- [ ] Task: Implement: Floating WhatsApp button with provided number 652422909
+- [~] Task: Implement: Floating WhatsApp button with provided number 652422909
 - [ ] Task: Integrate WhatsApp links into contact sections
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: WhatsApp Integration' (Protocol in workflow.md)
 
