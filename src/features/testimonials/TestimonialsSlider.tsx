@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SectionContainer } from '../../components/common/SectionContainer';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Testimonial {
   id: number;
@@ -108,11 +111,16 @@ export const TestimonialsSlider: React.FC = () => {
     }, containerRef);
 
     // Force ScrollTrigger refresh after a short delay to handle reloads
-    setTimeout(() => {
-      ScrollTrigger.refresh();
+    const timer = setTimeout(() => {
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
     }, 100);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      clearTimeout(timer);
+    };
   }, []);
 
   const testimonial = TESTIMONIALS[currentIndex];

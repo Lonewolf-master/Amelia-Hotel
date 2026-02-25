@@ -24,7 +24,7 @@ This plan outlines the steps to tailor the Apart Hotel Amelia website with authe
 
 ## Phase 4: FAQs & Policies
 
-- [ ] Task: Write Tests: FAQ accordion interaction
+- [~] Task: Write Tests: FAQ accordion interaction
 - [ ] Task: Implement: FAQ section with provided house rules and general info
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: FAQs & Policies' (Protocol in workflow.md)
 
