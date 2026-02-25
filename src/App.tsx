@@ -1,6 +1,7 @@
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Hero from './features/hero/Hero'
+import RoomGallery from './features/rooms/RoomGallery'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       
       <main>
         <Hero />
+        <RoomGallery />
       </main>
 
       <Footer />
@@ -17,5 +19,6 @@ function App() {
 }
 
 export default App
+
 
 
