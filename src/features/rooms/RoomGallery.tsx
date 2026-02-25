@@ -18,50 +18,50 @@ interface Room {
 const ROOMS: Room[] = [
   {
     id: 1,
-    title: "The Amelia Suite",
-    type: "Presidential",
-    price: "$450 / night",
-    description: "Our most exclusive offering, featuring a panoramic view of the mountains.",
+    title: "Deluxe King Room",
+    type: "Extra-large double bed",
+    price: "XAF 80,000 / night",
+    description: "Featuring free toiletries and bathrobes, this double room includes a private bathroom with a bath, a shower and a bidet. Spacious with a dining area and flat-screen TV.",
     image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 2,
-    title: "Azure Vista",
-    type: "Deluxe King",
-    price: "$320 / night",
-    description: "Modern comfort meets classic elegance with state-of-the-art amenities.",
+    title: "Deluxe Double Room",
+    type: "Large double bed",
+    price: "XAF 40,000 / night",
+    description: "Providing free toiletries and bathrobes, this double room includes a private bathroom with a shower, a bidet and a hairdryer. Featuring a balcony and air conditioning.",
     image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 3,
-    title: "Golden Sanctuary",
-    type: "Executive Suite",
-    price: "$380 / night",
-    description: "A serene retreat designed for the discerning traveler seeking peace.",
+    title: "Luxury Triple Room",
+    type: "Extra-large double bed",
+    price: "XAF 100,000 / night",
+    description: "Offering free toiletries and bathrobes, this triple room includes a private bathroom with a bath, a shower and a bidet. Features a tea/coffee maker and dining area.",
     image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 4,
-    title: "Royal Penthouse",
-    type: "Ultra Luxury",
-    price: "$600 / night",
-    description: "The height of opulence with private terrace and dedicated butler service.",
+    title: "Deluxe Apartment",
+    type: "1 Extra-large & 1 Large double bed",
+    price: "XAF 150,000 / night",
+    description: "The spacious apartment features 1 bedroom and 1 bathroom with a shower. Featuring a balcony, air conditioning, and a flat-screen TV.",
     image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 5,
-    title: "Emerald Garden",
-    type: "Garden View",
-    price: "$280 / night",
-    description: "Lush greenery meets sophisticated design in this tranquil garden escape.",
+    title: "Superior Apartment with Balcony",
+    type: "2 Bedrooms & 3 Sofa beds",
+    price: "XAF 200,000 / night",
+    description: "Our most expansive accommodation, accommodating up to 6 guests. Features multiple bedrooms, a living room, and a private balcony with stunning views.",
     image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: 6,
-    title: "Midnight Velvet",
-    type: "Boutique Queen",
-    price: "$250 / night",
-    description: "A moody, atmospheric space for those who appreciate contemporary style.",
+    title: "Double Room with Spa Bath",
+    type: "2 Large double beds",
+    price: "XAF 100,000 / night",
+    description: "A luxurious space for groups or families, featuring two double beds and a premium spa bath for the ultimate relaxation.",
     image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&q=80&w=800"
   }
 ];
