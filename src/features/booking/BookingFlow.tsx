@@ -3,6 +3,8 @@ import gsap from 'gsap';
 import { useBooking } from '../../context/BookingContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { SectionContainer } from '../../components/common/SectionContainer';
+import { StayDetails } from './StayDetails';
+import { RoomSelection } from './RoomSelection';
 
 export const BookingFlow: React.FC = () => {
   const { currentStep } = useBooking();
@@ -61,8 +63,8 @@ export const BookingFlow: React.FC = () => {
 
         {/* Step Content */}
         <div ref={stepContainerRef} className="bg-slate-900 border border-slate-800 p-8 md:p-16 luxury-shadow min-h-[400px]">
-          {currentStep === 'stay' && <div className="text-white">Stay Details Component (Pending)</div>}
-          {currentStep === 'rooms' && <div className="text-white">Room Selection Component (Pending)</div>}
+          {currentStep === 'stay' && <StayDetails />}
+          {currentStep === 'rooms' && <RoomSelection />}
           {currentStep === 'details' && <div className="text-white">Guest Details Component (Pending)</div>}
           {currentStep === 'confirm' && <div className="text-white">Confirmation Component (Pending)</div>}
         </div>
