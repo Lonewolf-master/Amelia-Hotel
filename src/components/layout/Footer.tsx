@@ -33,10 +33,10 @@ export const Footer: React.FC = () => {
         <div>
           <h4 className="text-gold uppercase tracking-widest text-sm font-semibold mb-6">Follow Us</h4>
           <div className="flex space-x-6 text-slate-400">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors duration-300">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-gold transition-colors duration-300">
               <Instagram className="w-6 h-6" />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors duration-300">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-gold transition-colors duration-300">
               <Facebook className="w-6 h-6" />
             </a>
           </div>
