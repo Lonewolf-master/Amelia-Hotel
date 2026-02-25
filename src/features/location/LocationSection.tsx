@@ -13,7 +13,7 @@ export const LocationSection: React.FC = () => {
           <h2 className="text-sm uppercase tracking-[0.4em] text-gold mb-4 font-sans font-medium">Location</h2>
           <h3 className="text-5xl md:text-6xl luxury-heading text-white mb-8">Where Luxury Meets Convenience</h3>
           <p className="text-slate-400 text-lg mb-8 font-light leading-relaxed">
-            Situated in the prime district of Buea, Apart Hotel Amelia offers easy access to the city's business hubs while providing a serene mountain-view retreat.
+            Situated in the prime district of Buea, Apart Hotel Amelia offers a 5-star experience just 4 km from the city centre. We provide a complimentary shuttle service for our guests, and are conveniently located near the Tiko Golf Club (17 km) and Botanic Garden (31 km).
           </p>
           <div className="flex items-start space-x-4 mb-12">
             <MapPin className="text-gold w-6 h-6 mt-1 flex-shrink-0" />

@@ -77,8 +77,8 @@ export const FAQSection: React.FC = () => {
       checkIn: "Check-in: 13:00 - 14:00",
       checkOut: "Check-out: Until 11:00 (24h available)",
       petText: "Pets are welcome on request. No extra charges apply.",
-      policyText1: "Children of all ages are welcome.",
-      policyText2: "Parties and events are not allowed."
+      policyText1: "Children of all ages are welcome. Free cots available (0-2 years).",
+      policyText2: "Parties and events are not allowed. No extra beds available."
     },
     fr: {
       subheading: "Infos Utiles",
@@ -92,8 +92,8 @@ export const FAQSection: React.FC = () => {
       checkIn: "Arrivée: 13:00 - 14:00",
       checkOut: "Départ: Jusqu'à 11:00 (24h disponible)",
       petText: "Les animaux sont acceptés sur demande. Sans frais supplémentaires.",
-      policyText1: "Les enfants de tous âges sont les bienvenus.",
-      policyText2: "Les fêtes et événements ne sont pas autorisés."
+      policyText1: "Enfants bienvenus. Berceaux gratuits (0-2 ans).",
+      policyText2: "Fêtes interdites. Pas de lits d'appoint."
     }
   }[language];
 
