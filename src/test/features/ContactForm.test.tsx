@@ -14,7 +14,7 @@ describe('ContactForm Component', () => {
     render(<ContactForm />)
     fireEvent.click(screen.getByRole('button', { name: /send/i }))
     // Should show some validation feedback
-    expect(screen.getByText(/required/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/required/i).length).toBeGreaterThan(0)
   })
 
   it('submits correctly with valid data', () => {
