@@ -80,15 +80,39 @@ export const TestimonialsSlider: React.FC = () => {
   };
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 80%',
-      }
-    });
+    const ctx = gsap.context(() => {
+      // Header Animation
+      gsap.from('.testimonial-header', {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 85%',
+        }
+      });
 
-    tl.from('.testimonial-header', { opacity: 0, y: 30, duration: 1 })
-      .from(cardRef.current, { opacity: 0, scale: 0.95, duration: 1 }, '-=0.5');
+      // Card Animation
+      gsap.from(cardRef.current, {
+        opacity: 0,
+        y: 40,
+        duration: 1.2,
+        delay: 0.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%',
+        }
+      });
+    }, containerRef);
+
+    // Force ScrollTrigger refresh after a short delay to handle reloads
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
+    return () => ctx.revert();
   }, []);
 
   const testimonial = TESTIMONIALS[currentIndex];

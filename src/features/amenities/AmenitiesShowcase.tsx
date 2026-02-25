@@ -41,7 +41,7 @@ const AMENITIES: Amenity[] = [
     title: "Signature Dining",
     description: "Savor a fusion of African and European cuisines in our elegant on-site restaurant and bar.",
     icon: <Coffee className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1550966842-30cae75851ce?auto=format&fit=crop&q=80&w=800"
+    image: "https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=800"
   }
 ];
 
