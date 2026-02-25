@@ -1,15 +1,14 @@
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
+import Hero from './features/hero/Hero'
 
 function App() {
   return (
     <div className="min-h-screen bg-slate-950">
       <Navbar />
       
-      <main className="pt-32 min-h-[80vh] flex items-center justify-center">
-        <h1 className="text-6xl md:text-8xl luxury-heading text-center">
-          Apart Hotel Amelia
-        </h1>
+      <main>
+        <Hero />
       </main>
 
       <Footer />
@@ -18,4 +17,5 @@ function App() {
 }
 
 export default App
+
 
