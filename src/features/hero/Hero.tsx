@@ -79,7 +79,7 @@ export const Hero: React.FC = () => {
           ref={titleRef}
           className="text-6xl md:text-9xl mb-6 luxury-heading flex flex-col items-center"
         >
-          <span className="text-sm uppercase tracking-[0.5em] mb-4 text-gold/80 italic font-sans font-normal">Welcome to</span>
+          <span className="text-sm uppercase tracking-[0.5em] mb-4 text-gold/80 italic font-sans font-normal">Welcome to | Bienvenue à</span>
           <span className="flex flex-wrap justify-center gap-x-8">
             <span>Exquisite</span>
             <span className="text-white/90">Living</span>
@@ -95,7 +95,7 @@ export const Hero: React.FC = () => {
 
         <div ref={ctaRef}>
           <Button variant="luxury" className="px-12 py-4">
-            Discover More
+            Discover More | Découvrir
           </Button>
         </div>
       </div>

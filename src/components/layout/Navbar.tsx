@@ -16,6 +16,11 @@ export const Navbar: React.FC = () => {
         </div>
         
         <div className="flex items-center space-x-6">
+          <div className="hidden sm:flex items-center border-r border-gold/20 pr-6 mr-6 space-x-3 text-[10px] tracking-widest font-bold">
+            <button className="text-gold">EN</button>
+            <span className="text-slate-700">|</span>
+            <button className="text-slate-500 hover:text-gold transition-colors">FR</button>
+          </div>
           <Button className="!py-2 !px-6 text-xs">
             Book Now
           </Button>
