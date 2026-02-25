@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-gold: 212 175 55;
+    --color-navy: 0 0 128;
+    --color-deep-green: 0 100 0;
+    --color-cream: 245 245 220;
+  }
+
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased;
+    font-family: 'Playfair Display', serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-luxury tracking-wide;
+  }
+}
+
+@layer components {
+  .text-gold {
+    color: rgb(var(--color-gold));
+  }
+
+  .bg-gold {
+    background-color: rgb(var(--color-gold));
+  }
+
+  .border-gold {
+    border-color: rgb(var(--color-gold));
+  }
+
+  .luxury-button {
+    @apply px-8 py-3 border border-gold text-gold hover:bg-gold hover:text-slate-950 transition-all duration-500 uppercase tracking-widest text-sm font-semibold;
+  }
+
+  .luxury-heading {
+    @apply text-gold font-luxury italic;
+  }
+}
+
+/* Custom Utilities */
+.luxury-shadow {
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+}
+
+.parallax-container {
+  overflow: hidden;
+  position: relative;
+}
