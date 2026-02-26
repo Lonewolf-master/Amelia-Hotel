@@ -4,8 +4,8 @@ import { RoomGallery } from '../../features/rooms/RoomGallery'
 describe('RoomGallery Component', () => {
   it('renders the gallery section title', () => {
     render(<RoomGallery />)
-    expect(screen.getByText(/Accommodation/i)).toBeInTheDocument()
-    expect(screen.getByText(/Our Signature Rooms/i)).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Accommodation/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Our Signature Rooms/i })).toBeInTheDocument()
   })
 
   it('renders multiple room cards', () => {

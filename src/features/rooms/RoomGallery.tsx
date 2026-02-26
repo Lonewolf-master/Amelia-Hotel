@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { SectionContainer } from '../../components/common/SectionContainer';
 import { Lightbox } from '../../components/common/Lightbox';
 import { useLanguage } from '../../context/LanguageContext';
 import { useBooking } from '../../context/BookingContext';
@@ -13,7 +12,7 @@ interface Room {
   id: number;
   title: Record<'en' | 'fr', string>;
   type: Record<'en' | 'fr', string>;
-  images: string[]; // Changed from image: string
+  images: string[];
   price: string;
   description: Record<'en' | 'fr', string>;
   amenities: string[];
@@ -173,7 +172,6 @@ const ROOMS: Room[] = [
   }
 ];
 
-
 export const RoomGallery: React.FC = () => {
   const { language } = useLanguage();
   const { updateData, setStep } = useBooking();
@@ -200,7 +198,6 @@ export const RoomGallery: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Reveal Animation
       gsap.fromTo(sectionRef.current,
         { opacity: 0, y: 50 },
         {
@@ -224,7 +221,7 @@ export const RoomGallery: React.FC = () => {
     
     setCurrentIndex(index);
     const cardWidth = cardsRef.current[0]?.offsetWidth || 0;
-    const gap = 32; // match the gap-8 from tailwind
+    const gap = 32;
     
     gsap.to(sliderRef.current, {
       x: -(index * (cardWidth + gap)),
@@ -234,12 +231,10 @@ export const RoomGallery: React.FC = () => {
   };
 
   const nextSlide = () => {
-    // Show 5 cards at once on desktop, so we stop before the last few
-    const visibleCards = window.innerWidth >= 1024 ? 5 : (window.innerWidth >= 768 ? 3 : 1);
     if (currentIndex < ROOMS.length - 1) {
       slideTo(currentIndex + 1);
     } else {
-      slideTo(0); // Loop back for "transparent" feel
+      slideTo(0);
     }
   };
 
@@ -324,43 +319,42 @@ export const RoomGallery: React.FC = () => {
               className="min-w-[80vw] md:min-w-[40vw] lg:min-w-[22vw] group relative overflow-hidden bg-slate-950 border border-slate-800 hover:border-gold/40 transition-colors duration-500 luxury-shadow cursor-pointer"
             >
               <div className="aspect-[4/5] overflow-hidden relative">
-                  <img 
-                    src={room.images[0]} 
-                    alt={room.title[language]}
-                    loading="lazy"
-                    className="room-image w-full h-full object-cover transition-transform duration-700 opacity-80 group-hover:opacity-100"
-                  />
-                  <div className="room-overlay absolute inset-0 bg-slate-950/20 opacity-0 pointer-events-none transition-opacity duration-500" />
-                </div>
+                <img 
+                  src={room.images[0]} 
+                  alt={room.title[language]}
+                  loading="lazy"
+                  className="room-image w-full h-full object-cover transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                />
+                <div className="room-overlay absolute inset-0 bg-slate-950/20 opacity-0 pointer-events-none transition-opacity duration-500" />
+              </div>
+              
+              <div className="p-10 relative">
+                <span className="text-xs uppercase tracking-[0.3em] text-gold/80 mb-3 block font-semibold">{room.type[language]}</span>
+                <h4 className="text-2xl text-white mb-4 font-luxury tracking-wide">{room.title[language]}</h4>
+                <p className="text-slate-400 text-sm mb-6 font-light leading-relaxed italic">
+                  {room.description[language]}
+                </p>
                 
-                <div className="p-10 relative">
-                                  <span className="text-xs uppercase tracking-[0.3em] text-gold/80 mb-3 block font-semibold">{room.type[language]}</span>
-                                  <h4 className="text-2xl text-white mb-4 font-luxury tracking-wide">{room.title[language]}</h4>
-                                  <p className="text-slate-400 text-sm mb-6 font-light leading-relaxed italic">
-                                    {room.description[language]}
-                                  </p>
-                                  
-                                  <div className="flex flex-wrap gap-2 mb-8">
-                                    {room.amenities.map((amenity, idx) => (
-                                      <span 
-                                        key={idx} 
-                                        className="text-[10px] uppercase tracking-widest px-2 py-1 bg-slate-900 border border-slate-800 text-slate-400"
-                                      >
-                                        {amenity}
-                                      </span>
-                                    ))}
-                                  </div>
-                  
-                                  <div className="flex flex-col space-y-6 pt-8 border-t border-slate-800/50">
-                                    <span className="text-gold font-bold tracking-widest text-lg">{room.price.replace('/ night', t.priceSuffix)}</span>
-                                    <button className="text-xs uppercase tracking-[0.2em] text-slate-300 hover:text-gold transition-colors font-bold text-left">
-                                      {t.viewDetails}
-                                    </button>
-                                  </div>
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {room.amenities.map((amenity, idx) => (
+                    <span 
+                      key={idx} 
+                      className="text-[10px] uppercase tracking-widest px-2 py-1 bg-slate-900 border border-slate-800 text-slate-400"
+                    >
+                      {amenity}
+                    </span>
+                  ))}
                 </div>
-              </article>
-            ))}
-          </div>
+
+                <div className="flex flex-col space-y-6 pt-8 border-t border-slate-800/50">
+                  <span className="text-gold font-bold tracking-widest text-lg">{room.price.replace('/ night', t.priceSuffix)}</span>
+                  <button className="text-xs uppercase tracking-[0.2em] text-slate-300 hover:text-gold transition-colors font-bold text-left">
+                    {t.viewDetails}
+                  </button>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
 
@@ -380,6 +374,6 @@ export const RoomGallery: React.FC = () => {
           }}
         />
       )}
-    </SectionContainer>
+    </section>
   );
 };
