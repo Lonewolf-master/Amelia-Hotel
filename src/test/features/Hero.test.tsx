@@ -8,9 +8,9 @@ describe('Hero Component', () => {
     expect(screen.getByText(/Living/i)).toBeInTheDocument()
   })
 
-  it('renders the call to action button', () => {
+  it('renders the property description', () => {
     render(<Hero />)
-    expect(screen.getByText(/Discover More/i)).toBeInTheDocument()
+    expect(screen.getByText(/celebrity treatment/i)).toBeInTheDocument()
   })
 
   it('renders background media container', () => {

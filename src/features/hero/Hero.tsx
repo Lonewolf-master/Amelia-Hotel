@@ -18,15 +18,41 @@ export const Hero: React.FC = () => {
       welcome: "Welcome to",
       exquisite: "Exquisite",
       living: "Living",
-      description: "Discover a sanctuary of refined elegance and personalized service in the heart of Buea.",
-      cta: "Discover More"
+      description: "Get the celebrity treatment with world-class service at Amelia Aparthotel.",
+      details: [
+        {
+          title: "Elegant Accommodation",
+          text: "Amelia Aparthotel in Buea offers a 5-star experience with a rooftop swimming pool, sauna, fitness centre, terrace, restaurant, bar, and free WiFi."
+        },
+        {
+          title: "Comfortable Amenities",
+          text: "Enjoy air-conditioning, balconies, bathrobes, spa baths, private bathrooms, tea/coffee makers, and 24-hour front desk services."
+        },
+        {
+          title: "Prime Location",
+          text: "Located 70 km from Douala Airport, near Tiko Golf Club (17 km) and Botanic Garden (31 km). Highly rated by guests."
+        }
+      ]
     },
     fr: {
       welcome: "Bienvenue à",
       exquisite: "Vie",
       living: "Exquise",
-      description: "Découvrez un sanctuaire d'élégance raffinée et de service personnalisé au cœur de Buea.",
-      cta: "Découvrir"
+      description: "Bénéficiez d'un traitement de célébrité avec un service de classe mondiale à l'Amelia Aparthotel.",
+      details: [
+        {
+          title: "Hébergement Élégant",
+          text: "L'Amelia Aparthotel à Buea propose une expérience 5 étoiles avec piscine sur le toit, sauna, salle de sport, restaurant et WiFi gratuit."
+        },
+        {
+          title: "Équipements Confortables",
+          text: "Profitez de la climatisation, de balcons, de peignoirs, de baignoires spa et d'une réception ouverte 24h/24."
+        },
+        {
+          title: "Emplacement Privilégié",
+          text: "Situé à 70 km de l'aéroport de Douala, à proximité du club de golf de Tiko (17 km) et du jardin botanique (31 km)."
+        }
+      ]
     }
   };
 
@@ -34,25 +60,23 @@ export const Hero: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Entrance Animations
       const tl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.5 } });
       
       tl.fromTo(titleRef.current, 
-        { y: 100, opacity: 0 }, 
+        { y: 50, opacity: 0 }, 
         { y: 0, opacity: 1, delay: 0.5 }
       )
       .fromTo(subtitleRef.current, 
-        { y: 50, opacity: 0 }, 
+        { y: 30, opacity: 0 }, 
         { y: 0, opacity: 1 }, 
         '-=1'
       )
-      .fromTo(ctaRef.current, 
-        { scale: 0.9, opacity: 0 }, 
-        { scale: 1, opacity: 1 }, 
+      .fromTo('.hero-info-grid', 
+        { y: 30, opacity: 0 }, 
+        { y: 0, opacity: 1 }, 
         '-=0.8'
       );
 
-      // Parallax Effect
       gsap.to('.hero-bg-container', {
         yPercent: 20,
         ease: 'none',
@@ -71,15 +95,13 @@ export const Hero: React.FC = () => {
   return (
     <section 
       ref={heroRef} 
-      className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-slate-950"
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-slate-950 py-32"
     >
       {/* Background Container */}
       <div className="hero-bg-container absolute inset-0 z-0 scale-110">
-        {/* Overlays for depth and readability */}
-        <div className="absolute inset-0 bg-slate-950/40 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-transparent to-slate-950 z-10" />
+        <div className="absolute inset-0 bg-slate-950/60 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-transparent to-slate-950 z-10" />
         
-        {/* Video with Poster (Initial Image) */}
         <video 
           autoPlay
           loop 
@@ -95,13 +117,13 @@ export const Hero: React.FC = () => {
         </video>
       </div>
 
-      <div className="relative z-20 text-center px-8">
+      <div className="relative z-20 text-center px-8 max-w-6xl mx-auto">
         <h1 
           ref={titleRef}
-          className="text-6xl md:text-9xl mb-6 luxury-heading flex flex-col items-center"
+          className="text-5xl md:text-8xl mb-8 luxury-heading flex flex-col items-center"
         >
-          <span className="text-sm uppercase tracking-[0.5em] mb-4 text-gold/80 italic font-sans font-normal">{t.welcome}</span>
-          <span className="flex flex-wrap justify-center gap-x-8">
+          <span className="text-xs uppercase tracking-[0.6em] mb-6 text-gold font-sans font-medium">{t.welcome}</span>
+          <span className="flex flex-wrap justify-center gap-x-6">
             <span>{t.exquisite}</span>
             <span className="text-white/90">{t.living}</span>
           </span>
@@ -109,15 +131,20 @@ export const Hero: React.FC = () => {
         
         <p 
           ref={subtitleRef}
-          className="text-slate-300 max-w-2xl mx-auto mb-12 text-lg md:text-xl font-light tracking-wide drop-shadow-lg"
+          className="text-gold max-w-3xl mx-auto mb-16 text-lg md:text-2xl font-luxury italic tracking-wide"
         >
           {t.description}
         </p>
 
-        <div ref={ctaRef}>
-          <Button variant="luxury" className="px-12 py-4">
-            {t.cta}
-          </Button>
+        <div className="hero-info-grid grid grid-cols-1 md:grid-cols-3 gap-12 text-left border-t border-gold/20 pt-12">
+          {t.details.map((item, i) => (
+            <div key={i} className="space-y-4">
+              <h4 className="text-gold text-xs uppercase tracking-[0.3em] font-bold">{item.title}</h4>
+              <p className="text-slate-300 text-sm leading-relaxed font-light">
+                {item.text}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
