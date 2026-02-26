@@ -236,7 +236,7 @@ export const TestimonialsSlider: React.FC = () => {
                 <span className="ml-3 md:ml-4 text-white font-bold tracking-widest text-xs md:text-sm">{testimonial.score}</span>
               </div>
 
-              <p className="text-xl md:text-3xl text-slate-200 font-light italic leading-relaxed mb-10 md:mb-12">
+              <p className="text-xl md:text-2xl text-slate-100 font-normal leading-relaxed mb-10 md:mb-12">
                 "{testimonial.content[language]}"
               </p>
 

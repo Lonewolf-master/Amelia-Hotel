@@ -58,16 +58,16 @@ export const TrustScore: React.FC = () => {
         </div>
         <div className="text-center md:text-left">
           <h4 className="text-3xl text-white font-luxury tracking-wide">{t.fabulous}</h4>
-          <p className="text-slate-500 uppercase tracking-widest text-xs mt-2">{t.reviews}</p>
+          <p className="text-slate-400 uppercase tracking-widest text-[11px] font-medium mt-2">{t.reviews}</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
         {CATEGORIES.map((cat, idx) => (
           <div key={idx} className="space-y-2">
-            <div className="flex justify-between text-xs uppercase tracking-widest">
+            <div className="flex justify-between text-[11px] uppercase tracking-widest font-semibold">
               <span className="text-slate-300">{cat.label[language]}</span>
-              <span className="text-gold font-bold">{cat.score}</span>
+              <span className="text-gold">{cat.score}</span>
             </div>
             <div className="h-1 bg-slate-800 w-full overflow-hidden">
               <div 

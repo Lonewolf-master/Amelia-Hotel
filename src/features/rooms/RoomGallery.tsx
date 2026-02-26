@@ -328,9 +328,9 @@ export const RoomGallery: React.FC = () => {
                 </div>
                 
                 <div className="p-10 relative">
-                  <span className="text-xs uppercase tracking-[0.3em] text-gold/80 mb-3 block font-semibold">{room.type[language]}</span>
+                  <span className="text-xs uppercase tracking-[0.2em] text-gold mb-3 block font-bold">{room.type[language]}</span>
                   <h4 className="text-2xl text-white mb-4 font-luxury tracking-wide">{room.title[language]}</h4>
-                  <p className="text-slate-400 text-sm mb-6 font-light leading-relaxed italic">
+                  <p className="text-slate-300 text-sm mb-6 font-normal leading-relaxed">
                     {room.description[language]}
                   </p>
                   
@@ -338,7 +338,7 @@ export const RoomGallery: React.FC = () => {
                     {room.amenities.map((amenity, idx) => (
                       <span 
                         key={idx} 
-                        className="text-[10px] uppercase tracking-widest px-2 py-1 bg-slate-900 border border-slate-800 text-slate-400"
+                        className="text-[11px] uppercase tracking-widest px-3 py-1 bg-slate-900 border border-slate-800 text-slate-300 font-medium"
                       >
                         {amenity}
                       </span>

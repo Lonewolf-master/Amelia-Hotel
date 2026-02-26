@@ -148,7 +148,7 @@ export const AmenitiesShowcase: React.FC = () => {
                   {amenity.icon}
                 </div>
                 <h4 className="text-3xl md:text-4xl text-white font-luxury tracking-wide">{amenity.title[language]}</h4>
-                <p className="text-slate-400 text-lg font-light leading-relaxed italic max-w-xl mx-auto md:mx-0">
+                <p className="text-slate-300 text-lg font-normal leading-relaxed max-w-xl mx-auto md:mx-0">
                   {amenity.description[language]}
                 </p>
                 <div className="pt-4">
