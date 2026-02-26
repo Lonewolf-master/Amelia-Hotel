@@ -224,26 +224,30 @@ export const RoomGallery: React.FC = () => {
     
     setCurrentIndex(index);
     const cardWidth = cardsRef.current[0]?.offsetWidth || 0;
-    const gap = 40; // match the gap-10 from tailwind (2.5rem = 40px)
+    const gap = 32; // match the gap-8 from tailwind
     
     gsap.to(sliderRef.current, {
       x: -(index * (cardWidth + gap)),
-      duration: 1,
-      ease: 'power4.inOut'
+      duration: 1.2,
+      ease: 'expo.inOut'
     });
   };
 
   const nextSlide = () => {
-    // Show 3 cards at once on desktop, so we stop before the last few
-    const visibleCards = window.innerWidth >= 768 ? 3 : 1;
-    if (currentIndex < ROOMS.length - visibleCards) {
+    // Show 5 cards at once on desktop, so we stop before the last few
+    const visibleCards = window.innerWidth >= 1024 ? 5 : (window.innerWidth >= 768 ? 3 : 1);
+    if (currentIndex < ROOMS.length - 1) {
       slideTo(currentIndex + 1);
+    } else {
+      slideTo(0); // Loop back for "transparent" feel
     }
   };
 
   const prevSlide = () => {
     if (currentIndex > 0) {
       slideTo(currentIndex - 1);
+    } else {
+      slideTo(ROOMS.length - 1);
     }
   };
 
@@ -278,10 +282,10 @@ export const RoomGallery: React.FC = () => {
   };
 
   return (
-    <SectionContainer id="rooms" className="bg-slate-900 overflow-hidden">
-      <div ref={sectionRef}>
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div className="text-left">
+    <section id="rooms" className="bg-slate-900 py-24 overflow-hidden">
+      <div className="px-8 mb-20 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-8">
+          <div className="text-left" ref={sectionRef}>
             <h2 className="text-sm uppercase tracking-[0.4em] text-gold mb-4 font-sans font-medium">{t.category}</h2>
             <h3 className="text-5xl md:text-6xl luxury-heading text-white">{t.heading}</h3>
           </div>
@@ -289,7 +293,6 @@ export const RoomGallery: React.FC = () => {
           <div className="flex space-x-4">
             <button 
               onClick={prevSlide}
-              disabled={currentIndex === 0}
               aria-label="Previous rooms"
               className="p-4 border border-gold/20 text-gold hover:bg-gold hover:text-slate-950 transition-all duration-300 disabled:opacity-20 disabled:cursor-not-allowed"
             >
@@ -304,22 +307,23 @@ export const RoomGallery: React.FC = () => {
             </button>
           </div>
         </div>
+      </div>
 
-        <div className="relative">
-          <div 
-            ref={sliderRef}
-            className="flex gap-10 transition-none"
-          >
-            {ROOMS.map((room, index) => (
-              <article 
-                key={room.id}
-                ref={el => cardsRef.current[index] = el}
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={() => handleMouseLeave(index)}
-                onClick={() => setSelectedRoom(room)}
-                className="min-w-full md:min-w-[calc(33.333%-1.7rem)] group relative overflow-hidden bg-slate-950 border border-slate-800 hover:border-gold/40 transition-colors duration-500 luxury-shadow cursor-pointer"
-              >
-                <div className="aspect-[4/5] overflow-hidden relative">
+      <div className="relative px-[10vw]">
+        <div 
+          ref={sliderRef}
+          className="flex gap-8 transition-none"
+        >
+          {ROOMS.map((room, index) => (
+            <article 
+              key={room.id}
+              ref={el => cardsRef.current[index] = el}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={() => handleMouseLeave(index)}
+              onClick={() => setSelectedRoom(room)}
+              className="min-w-[80vw] md:min-w-[40vw] lg:min-w-[22vw] group relative overflow-hidden bg-slate-950 border border-slate-800 hover:border-gold/40 transition-colors duration-500 luxury-shadow cursor-pointer"
+            >
+              <div className="aspect-[4/5] overflow-hidden relative">
                   <img 
                     src={room.images[0]} 
                     alt={room.title[language]}
