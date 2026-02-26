@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { SectionContainer } from '../../components/common/SectionContainer';
 import { Lightbox } from '../../components/common/Lightbox';
 import { useLanguage } from '../../context/LanguageContext';
 import { useBooking } from '../../context/BookingContext';
@@ -198,6 +199,7 @@ export const RoomGallery: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Reveal Animation
       gsap.fromTo(sectionRef.current,
         { opacity: 0, y: 50 },
         {
@@ -221,28 +223,25 @@ export const RoomGallery: React.FC = () => {
     
     setCurrentIndex(index);
     const cardWidth = cardsRef.current[0]?.offsetWidth || 0;
-    const gap = 32;
+    const gap = 40; // match the gap-10 from tailwind
     
     gsap.to(sliderRef.current, {
       x: -(index * (cardWidth + gap)),
-      duration: 1.2,
-      ease: 'expo.inOut'
+      duration: 1,
+      ease: 'power4.inOut'
     });
   };
 
   const nextSlide = () => {
-    if (currentIndex < ROOMS.length - 1) {
+    const visibleCards = window.innerWidth >= 768 ? 3 : 1;
+    if (currentIndex < ROOMS.length - visibleCards) {
       slideTo(currentIndex + 1);
-    } else {
-      slideTo(0);
     }
   };
 
   const prevSlide = () => {
     if (currentIndex > 0) {
       slideTo(currentIndex - 1);
-    } else {
-      slideTo(ROOMS.length - 1);
     }
   };
 
@@ -277,10 +276,10 @@ export const RoomGallery: React.FC = () => {
   };
 
   return (
-    <section id="rooms" className="bg-slate-900 py-24 overflow-hidden">
-      <div className="px-8 mb-20 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-8">
-          <div className="text-left" ref={sectionRef}>
+    <SectionContainer id="rooms" className="bg-slate-900 overflow-hidden">
+      <div ref={sectionRef}>
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div className="text-left">
             <h2 className="text-sm uppercase tracking-[0.4em] text-gold mb-4 font-sans font-medium">{t.category}</h2>
             <h3 className="text-5xl md:text-6xl luxury-heading text-white">{t.heading}</h3>
           </div>
@@ -288,6 +287,7 @@ export const RoomGallery: React.FC = () => {
           <div className="flex space-x-4">
             <button 
               onClick={prevSlide}
+              disabled={currentIndex === 0}
               aria-label="Previous rooms"
               className="p-4 border border-gold/20 text-gold hover:bg-gold hover:text-slate-950 transition-all duration-300 disabled:opacity-20 disabled:cursor-not-allowed"
             >
@@ -302,78 +302,78 @@ export const RoomGallery: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
 
-      <div className="relative px-[10vw]">
-        <div 
-          ref={sliderRef}
-          className="flex gap-8 transition-none"
-        >
-          {ROOMS.map((room, index) => (
-            <article 
-              key={room.id}
-              ref={el => cardsRef.current[index] = el}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={() => handleMouseLeave(index)}
-              onClick={() => setSelectedRoom(room)}
-              className="min-w-[80vw] md:min-w-[40vw] lg:min-w-[22vw] group relative overflow-hidden bg-slate-950 border border-slate-800 hover:border-gold/40 transition-colors duration-500 luxury-shadow cursor-pointer"
-            >
-              <div className="aspect-[4/5] overflow-hidden relative">
-                <img 
-                  src={room.images[0]} 
-                  alt={room.title[language]}
-                  loading="lazy"
-                  className="room-image w-full h-full object-cover transition-transform duration-700 opacity-80 group-hover:opacity-100"
-                />
-                <div className="room-overlay absolute inset-0 bg-slate-950/20 opacity-0 pointer-events-none transition-opacity duration-500" />
-              </div>
-              
-              <div className="p-10 relative">
-                <span className="text-xs uppercase tracking-[0.3em] text-gold/80 mb-3 block font-semibold">{room.type[language]}</span>
-                <h4 className="text-2xl text-white mb-4 font-luxury tracking-wide">{room.title[language]}</h4>
-                <p className="text-slate-400 text-sm mb-6 font-light leading-relaxed italic">
-                  {room.description[language]}
-                </p>
+        <div className="relative">
+          <div 
+            ref={sliderRef}
+            className="flex gap-10 transition-none"
+          >
+            {ROOMS.map((room, index) => (
+              <article 
+                key={room.id}
+                ref={el => cardsRef.current[index] = el}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={() => handleMouseLeave(index)}
+                onClick={() => setSelectedRoom(room)}
+                className="min-w-full md:min-w-[calc(33.333%-1.7rem)] group relative overflow-hidden bg-slate-950 border border-slate-800 hover:border-gold/40 transition-colors duration-500 luxury-shadow cursor-pointer"
+              >
+                <div className="aspect-[4/5] overflow-hidden relative">
+                  <img 
+                    src={room.images[0]} 
+                    alt={room.title[language]}
+                    loading="lazy"
+                    className="room-image w-full h-full object-cover transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                  />
+                  <div className="room-overlay absolute inset-0 bg-slate-950/20 opacity-0 pointer-events-none transition-opacity duration-500" />
+                </div>
                 
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {room.amenities.map((amenity, idx) => (
-                    <span 
-                      key={idx} 
-                      className="text-[10px] uppercase tracking-widest px-2 py-1 bg-slate-900 border border-slate-800 text-slate-400"
-                    >
-                      {amenity}
-                    </span>
-                  ))}
+                <div className="p-10 relative">
+                  <span className="text-xs uppercase tracking-[0.3em] text-gold/80 mb-3 block font-semibold">{room.type[language]}</span>
+                  <h4 className="text-2xl text-white mb-4 font-luxury tracking-wide">{room.title[language]}</h4>
+                  <p className="text-slate-400 text-sm mb-6 font-light leading-relaxed italic">
+                    {room.description[language]}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {room.amenities.map((amenity, idx) => (
+                      <span 
+                        key={idx} 
+                        className="text-[10px] uppercase tracking-widest px-2 py-1 bg-slate-900 border border-slate-800 text-slate-400"
+                      >
+                        {amenity}
+                      </span>
+                    ))}
+                  </div>
+  
+                  <div className="flex flex-col space-y-6 pt-8 border-t border-slate-800/50">
+                    <span className="text-gold font-bold tracking-widest text-lg">{room.price.replace('/ night', t.priceSuffix)}</span>
+                    <button className="text-xs uppercase tracking-[0.2em] text-slate-300 hover:text-gold transition-colors font-bold text-left">
+                      {t.viewDetails}
+                    </button>
+                  </div>
                 </div>
-
-                <div className="flex flex-col space-y-6 pt-8 border-t border-slate-800/50">
-                  <span className="text-gold font-bold tracking-widest text-lg">{room.price.replace('/ night', t.priceSuffix)}</span>
-                  <button className="text-xs uppercase tracking-[0.2em] text-slate-300 hover:text-gold transition-colors font-bold text-left">
-                    {t.viewDetails}
-                  </button>
-                </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {selectedRoom && (
-        <Lightbox 
-          isOpen={!!selectedRoom}
-          onClose={() => setSelectedRoom(null)}
-          images={selectedRoom.images}
-          title={selectedRoom.title[language]}
-          description={selectedRoom.description[language]}
-          price={selectedRoom.price.replace('/ night', t.priceSuffix)}
-          onBookNow={() => {
-            updateData({ roomId: selectedRoom.id });
-            setStep('stay');
-            setSelectedRoom(null);
-            document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' });
-          }}
-        />
-      )}
-    </section>
+        {selectedRoom && (
+          <Lightbox 
+            isOpen={!!selectedRoom}
+            onClose={() => setSelectedRoom(null)}
+            images={selectedRoom.images}
+            title={selectedRoom.title[language]}
+            description={selectedRoom.description[language]}
+            price={selectedRoom.price.replace('/ night', t.priceSuffix)}
+            onBookNow={() => {
+              updateData({ roomId: selectedRoom.id });
+              setStep('stay');
+              setSelectedRoom(null);
+              document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          />
+        )}
+      </div>
+    </SectionContainer>
   );
 };
